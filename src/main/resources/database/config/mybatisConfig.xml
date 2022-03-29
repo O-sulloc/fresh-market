@@ -7,5 +7,6 @@
   <configuration>
   	<typeAliases>
   	  	<typeAlias type="com.pj.market.member.MemberDTO" alias="MemberDTO"/>
+  	  	<typeAlias type="com.pj.market.product.ProductDTO" alias="ProductDTO"/>
   	</typeAliases>
   </configuration>

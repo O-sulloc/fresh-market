@@ -23,7 +23,7 @@
 <meta name="theme-color" content="#7952b3">
 
 <!-- Custom styles for this template -->
-<link href="resources/footer.css" rel="stylesheet">
+<link href="../resources/css/footer.css" rel="stylesheet" />
 
 </head>
 <body>
