@@ -10,8 +10,22 @@ public class ProductService {
 
 	@Autowired
 	ProductDAO productDAO = new ProductDAO();
+
+	public int delete(ProductDTO productDTO) throws Exception{
+		return productDAO.delete(productDTO);
+	}
 	
-	public List<ProductDTO> list(ProductDTO productDTO) throws Exception{
-		return productDAO.list(productDTO);
+	public int add(ProductDTO productDTO) throws Exception {
+		return productDAO.add(productDTO);
+	}
+	
+	public ProductDTO detail(ProductDTO productDTO) throws Exception {
+		return productDAO.detail(productDTO);
+	}
+
+
+	public List<ProductDTO> list() throws Exception {
+		List<ProductDTO> ar = productDAO.list();
+		return ar;
 	}
 }

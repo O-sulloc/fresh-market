@@ -4,9 +4,23 @@
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
-    <mapper namespace="com.pj.market.member.ProductDAO">
+    <mapper namespace="com.pj.market.product.ProductDAO">
+    	<delete id="delete" parameterType="ProductDTO">
+    		DELETE product WHERE
+			no = #{no}
+    	</delete>
+    
+        <insert id="add" parameterType="ProductDTO">
+    		INSERT INTO product 
+    		VALUES 
+    		(PRODUCT_SEQ.nextval, #{proName}, #{price}, #{contents}, #{category})
+    	</insert>
+
+    	<select id="detail" parameterType="ProductDTO" resultType="ProductDTO">
+    		SELECT * FROM PRODUCT WHERE NO = #{no}
+    	</select>
+        	
     	<select id="list" resultType="ProductDTO">
     		SELECT * FROM PRODUCT ORDER BY NO DESC
     	</select>
-    
     </mapper>
