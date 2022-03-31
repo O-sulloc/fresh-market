@@ -12,6 +12,7 @@
   <td>${dto.contents}</td>
   
     <a href="./delete?num=${dto.num}"><button type="submit">삭제</button></a>
+    <a href="./update?num=${dto.num}"><button type="submit">수정</button></a>
      <a href="./list"><button type="submit">목록</button></a>
 </body>
 </html>
