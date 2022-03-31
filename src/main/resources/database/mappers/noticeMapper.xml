@@ -16,7 +16,7 @@
 	
 	<insert id="add" parameterType="NoticeDTO">
 	INSERT INTO NOTICE1
-	VALUES (#{num}, #{title}, #{id}, SYSDATE, #{contents})
+	VALUES (NOTICE1_SEQ.NEXTVAL, #{title}, #{id}, SYSDATE, #{contents})
 	</insert>
 	
     </mapper>

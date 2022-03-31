@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -33,7 +34,19 @@ public class NoticeController {
 	  
 	  //add form이동
 	  @GetMapping("add")
-	  public void add()throws Exception{
+	  public ModelAndView add(NoticeDTO noticeDTO, Model model)throws Exception{
+		  ModelAndView mv = new ModelAndView();
+		  mv.setViewName("notice/add");
+		  return mv;
+	  }
+	  
+	  //add DB
+	  @PostMapping("add")
+	  public ModelAndView add(NoticeDTO noticeDTO)throws Exception{
+		  ModelAndView mv = new ModelAndView();
+		  int result = noticeService.add(noticeDTO);
+		  mv.setViewName("redirect:./list");
+		  return mv;
 		  
 	  }
 
