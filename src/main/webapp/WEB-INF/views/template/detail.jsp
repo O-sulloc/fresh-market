@@ -1,21 +1,23 @@
 <!doctype html>
 <html class="no-js" lang="en">
   <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Foundation | Welcome</title>
+    <title>Document</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/motion-ui/1.2.3/motion-ui.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation-prototype.min.css">
     <link href='https://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css' rel='stylesheet' type='text/css'>
     <!-- optional CDN for Foundation Icons ^^ -->
   </head>
+  
   <body>
   <a href="./delete?no=${dto.no}">delete</a>
         <br>
       <article class="grid-container">
         <div class="grid-x grid-margin-x">
           <div class="medium-6 cell">
+	<!-- img tag -->
             <img class="thumbnail" src="https://placehold.it/650x350">
             <div class="grid-x grid-padding-x small-up-4">
               <div class="cell">

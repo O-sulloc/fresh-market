@@ -14,6 +14,10 @@ public class ProductDAO {
 
 	private final String NAMESPACE = "com.pj.market.product.ProductDAO.";
 
+	public int addFile(ProductFileDTO productFileDTO) throws Exception{
+		return sqlSession.insert(NAMESPACE+"addFile", productFileDTO);
+	}
+	
 	public int delete(ProductDTO productDTO) throws Exception {
 		return sqlSession.delete(NAMESPACE + "delete", productDTO);
 	}

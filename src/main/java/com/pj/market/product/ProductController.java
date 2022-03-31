@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
@@ -24,8 +25,8 @@ public class ProductController {
 	}
 
 	@PostMapping("add")
-	public String add(ProductDTO productDTO) throws Exception {
-		productService.add(productDTO);
+	public String add(ProductDTO productDTO, MultipartFile [] files) throws Exception {
+		int result = productService.add(productDTO, files);
 		return "redirect:./list";
 	}
 
@@ -36,6 +37,7 @@ public class ProductController {
 
 	@GetMapping("detail")
 	public void detail(ProductDTO productDTO, Model model) throws Exception {
+		System.out.println();
 		productDTO = productService.detail(productDTO);
 		model.addAttribute("dto", productDTO);
 	}

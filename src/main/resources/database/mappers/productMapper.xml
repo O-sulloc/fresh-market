@@ -5,17 +5,27 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
     <mapper namespace="com.pj.market.product.ProductDAO">
+    	
+    	<insert id="addFile" parameterType="ProductFileDTO">
+    		INSERT INTO PRODUCTFILE (FILENUM, NO, FILENAME, ORINAME) 
+    		VALUES
+    		(PRODUCTFILE_SEQ.nextval, #{no}, #{fileName}, #{oriName})
+    	</insert>
+    	
+        <insert id="add" parameterType="ProductDTO">
+            <selectKey keyProperty="no" order="BEFORE" resultType="Long">
+    			select product_seq.nextval from dual
+    		</selectKey>
+    		INSERT INTO product (NO, PRONAME, PRICE, CONTENTS, CATEGORY)
+    		VALUES 
+    		(#{no}, #{proName}, #{price}, #{contents}, #{category})
+    	</insert>
+
     	<delete id="delete" parameterType="ProductDTO">
     		DELETE product WHERE
 			no = #{no}
     	</delete>
-    
-        <insert id="add" parameterType="ProductDTO">
-    		INSERT INTO product 
-    		VALUES 
-    		(PRODUCT_SEQ.nextval, #{proName}, #{price}, #{contents}, #{category})
-    	</insert>
-
+    	
     	<select id="detail" parameterType="ProductDTO" resultType="ProductDTO">
     		SELECT * FROM PRODUCT WHERE NO = #{no}
     	</select>

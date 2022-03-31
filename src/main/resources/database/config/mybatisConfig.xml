@@ -8,5 +8,7 @@
   	<typeAliases>
   	  	<typeAlias type="com.pj.market.member.MemberDTO" alias="MemberDTO"/>
   	  	<typeAlias type="com.pj.market.product.ProductDTO" alias="ProductDTO"/>
+  	  	<typeAlias type="com.pj.market.product.ProductFileDTO" alias="ProductFileDTO"/>
+  	  	<typeAlias type="java.lang.Long" alias="Long" />
   	</typeAliases>
   </configuration>
