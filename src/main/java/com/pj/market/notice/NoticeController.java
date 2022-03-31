@@ -47,6 +47,15 @@ public class NoticeController {
 		  int result = noticeService.add(noticeDTO);
 		  mv.setViewName("redirect:./list");
 		  return mv;
+	  }
+	  
+	  //delete
+	  @GetMapping("delete")
+	  public ModelAndView delete(NoticeDTO noticeDTO)throws Exception{
+		  int result = noticeService.delete(noticeDTO);
+		  ModelAndView mv = new ModelAndView();
+		  mv.setViewName("redirect:./list");
+		return mv;
 		  
 	  }
 

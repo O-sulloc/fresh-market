@@ -19,4 +19,8 @@
 	VALUES (NOTICE1_SEQ.NEXTVAL, #{title}, #{id}, SYSDATE, #{contents})
 	</insert>
 	
+	<delete id="delete" parameterType="NoticeDTO">
+	DELETE NOTICE1 WHERE NUM = #{num}
+	</delete>
+	
     </mapper>
