@@ -23,4 +23,9 @@
 	DELETE NOTICE1 WHERE NUM = #{num}
 	</delete>
 	
+	<update id="update" parameterType="NoticeDTO">
+	UPDATE NOTICE1 SET TITLE=#{title}, CONTENTS=#{contents}
+	WHERE NUM= #{num}
+	</update>
+	
     </mapper>

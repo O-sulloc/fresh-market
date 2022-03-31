@@ -13,50 +13,58 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/notice/*")
 public class NoticeController {
-	
+
 	@Autowired
 	private NoticeService noticeService;
 
-	  @GetMapping("list")
-	  public ModelAndView list(ModelAndView mv, NoticeDTO noticeDTO)throws Exception{
-		 List<NoticeDTO> ar = noticeService.list(noticeDTO);
-		 mv.addObject("list", ar);
-		 mv.setViewName("notice/list");
-		return mv; 
-	  }
-	  
-	  @GetMapping("detail")
-	 public String detail(NoticeDTO noticeDTO, Model model)throws Exception{
-		  noticeDTO = noticeService.detail(noticeDTO);
-		  model.addAttribute("dto", noticeDTO);
-		  return "notice/detail";
-	  }
-	  
-	  //add form이동
-	  @GetMapping("add")
-	  public ModelAndView add(NoticeDTO noticeDTO, Model model)throws Exception{
-		  ModelAndView mv = new ModelAndView();
-		  mv.setViewName("notice/add");
-		  return mv;
-	  }
-	  
-	  //add DB
-	  @PostMapping("add")
-	  public ModelAndView add(NoticeDTO noticeDTO)throws Exception{
-		  ModelAndView mv = new ModelAndView();
-		  int result = noticeService.add(noticeDTO);
-		  mv.setViewName("redirect:./list");
-		  return mv;
-	  }
-	  
-	  //delete
-	  @GetMapping("delete")
-	  public ModelAndView delete(NoticeDTO noticeDTO)throws Exception{
-		  int result = noticeService.delete(noticeDTO);
-		  ModelAndView mv = new ModelAndView();
-		  mv.setViewName("redirect:./list");
+	@GetMapping("list")
+	public ModelAndView list(ModelAndView mv, NoticeDTO noticeDTO) throws Exception {
+		List<NoticeDTO> ar = noticeService.list(noticeDTO);
+		mv.addObject("list", ar);
+		mv.setViewName("notice/list");
 		return mv;
-		  
-	  }
+	}
+
+	@GetMapping("detail")
+	public String detail(NoticeDTO noticeDTO, Model model) throws Exception {
+		noticeDTO = noticeService.detail(noticeDTO);
+		model.addAttribute("dto", noticeDTO);
+		return "notice/detail";
+	}
+
+	// add form이동
+	@GetMapping("add")
+	public ModelAndView add(NoticeDTO noticeDTO, Model model) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("notice/add");
+		return mv;
+	}
+
+	// add DB
+	@PostMapping("add")
+	public ModelAndView add(NoticeDTO noticeDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		int result = noticeService.add(noticeDTO);
+		mv.setViewName("redirect:./list");
+		return mv;
+	}
+
+	// delete
+	@GetMapping("delete")
+	public ModelAndView delete(NoticeDTO noticeDTO) throws Exception {
+		int result = noticeService.delete(noticeDTO);
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("redirect:./list");
+		return mv;
+	}
+
+	// update form
+	@GetMapping("update")
+	public String update(NoticeDTO noticeDTO, Model model) throws Exception {
+		noticeDTO = noticeService.detail(noticeDTO);
+		model.addAttribute("dto", noticeDTO);
+		return "notice/update";
+	}
+	
 
 }
