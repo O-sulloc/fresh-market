@@ -66,5 +66,11 @@ public class NoticeController {
 		return "notice/update";
 	}
 	
+	// update DB
+	@PostMapping("update")
+	public void update()throws Exception{
+		
+	}
+	
 
 }
