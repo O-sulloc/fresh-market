@@ -5,6 +5,21 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
     
     <mapper namespace="com.pj.market.product.ProductDAO">
+    	<delete id="fileDelete" parameterType="ProductFileDTO">
+ 			DELETE PRODUCTFILE WHERE
+			FILENUM = #{fileNum}
+    	</delete>
+    	
+    	<select id="listFile" parameterType="ProductDTO" resultType="ProductFileDTO">
+    		SELECT * FROM PRODUCTFILE
+    		WHERE NO = #{no}
+    	</select>
+    
+    	<update id="update" parameterType="ProductDTO">
+    		UPDATE PRODUCT 
+    		SET proname=#{proName}, price=#{price}, contents=#{contents}, category=#{category}
+    		where no=#{no}
+    	</update>
     	
     	<insert id="addFile" parameterType="ProductFileDTO">
     		INSERT INTO PRODUCTFILE (FILENUM, NO, FILENAME, ORINAME) 
@@ -26,11 +41,43 @@
 			no = #{no}
     	</delete>
     	
-    	<select id="detail" parameterType="ProductDTO" resultType="ProductDTO">
-    		SELECT * FROM PRODUCT WHERE NO = #{no}
+    	<select id="detail" parameterType="ProductDTO" resultMap="detailResult">
+    		select p.*, pf.*
+			from 
+				product p
+    				left outer join
+    			productfile pf
+    			on p.no = pf.no
+			where p.no=#{no}
     	</select>
+    	
+    	<resultMap type="ProductDTO" id="detailResult">
+    		<id column="no" property="no"/>
+    		<result column="proname" property="proName"/>
+    		<result column="price" property="price"/>
+    		<result column="contents" property="contents"/>
+    		<result column="category" property="category"/>
+    		<collection property="fileDTOs" javaType="List" ofType="ProductFileDTO">
+    			<id column="fileNum" property="fileNum"/>
+    			<result column="fileName" property="fileName"/>
+    			<result column="oriName" property="oriName"/>
+    		</collection>
+    	</resultMap>
+        
+        <select id="total" resultType="Long" parameterType="ProductPager">
+        	select count(no) from product
+        	where no>0 
+    		and proname like '%' || #{search} || '%' 
+        </select>
         	
-    	<select id="list" resultType="ProductDTO">
-    		SELECT * FROM PRODUCT ORDER BY NO DESC
+    	<select id="list" parameterType="ProductPager" resultType="ProductDTO">
+    		SELECT * FROM 
+    			(select rownum R, P.* From
+    				(select * from product where no>0 
+    				and proname like '%' || #{search} || '%' 
+    				ORDER BY NO DESC
+    				) P
+    			)
+    		where R between #{startRow} and #{lastRow}
     	</select>
     </mapper>

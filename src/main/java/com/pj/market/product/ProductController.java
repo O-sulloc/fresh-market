@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.pj.market.util.ProductPager;
+
 @Controller
 @RequestMapping("/product/*")
 public class ProductController {
@@ -18,14 +20,38 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 
-	@RequestMapping("delete")
+	@PostMapping("fileDelete")
+	public ModelAndView fileDelete(ProductFileDTO productFileDTO) throws Exception {
+		ModelAndView mv = new ModelAndView();
+		System.out.println(productFileDTO.getFileNum());
+		int result = productService.fileDelete(productFileDTO);
+
+		mv.setViewName("common/ajaxResult");
+		mv.addObject("result", result);
+		return mv;
+	}
+
+	@PostMapping("update")
+	public String update(ProductDTO productDTO, MultipartFile[] files) throws Exception {
+		int result = productService.update(productDTO, files);
+		return "redirect:./list";
+	}
+
+	@GetMapping("update")
+	public void update(ProductDTO productDTO, Model model) throws Exception {
+		productDTO = productService.detail(productDTO);
+		model.addAttribute("dto", productDTO);
+
+	}
+
+	@GetMapping("delete")
 	public String delete(ProductDTO productDTO) throws Exception {
 		int result = productService.delete(productDTO);
 		return "redirect:./list";
 	}
 
 	@PostMapping("add")
-	public String add(ProductDTO productDTO, MultipartFile [] files) throws Exception {
+	public String add(ProductDTO productDTO, MultipartFile[] files) throws Exception {
 		int result = productService.add(productDTO, files);
 		return "redirect:./list";
 	}
@@ -43,10 +69,11 @@ public class ProductController {
 	}
 
 	@GetMapping("list")
-	public ModelAndView list(ModelAndView mv) throws Exception {
+	public ModelAndView list(ModelAndView mv, ProductPager productPager) throws Exception {
 
-		List<ProductDTO> ar = productService.list();
+		List<ProductDTO> ar = productService.list(productPager);
 		mv.addObject("list", ar);
+		mv.addObject("pager", productPager);
 		mv.setViewName("product/list");
 		return mv;
 	}

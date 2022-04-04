@@ -1,5 +1,7 @@
 package com.pj.market.product;
 
+import java.util.List;
+
 public class ProductDTO {
 
 	private Long no;
@@ -7,6 +9,16 @@ public class ProductDTO {
 	private Long price;
 	private String contents;
 	private Long category;
+
+	private List<ProductDTO> fileDTOs;
+	
+	public List<ProductDTO> getFileDTOs() {
+		return fileDTOs;
+	}
+
+	public void setFileDTOs(List<ProductDTO> fileDTOs) {
+		this.fileDTOs = fileDTOs;
+	}
 
 	public Long getNo() {
 		return no;

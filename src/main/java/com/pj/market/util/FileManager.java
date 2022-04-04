@@ -17,6 +17,14 @@ public class FileManager {
 	@Autowired
 	private ServletContext servletContext;
 
+	// file 삭제
+	public boolean remove(String path, String fileName) throws Exception {
+		path = servletContext.getRealPath(path);
+		File file = new File(path, fileName);
+		return file.delete();
+	}
+
+	// file 다운로드.. 쓸 일이 있나 쇼핑몰에서?
 	public String save(MultipartFile multipartFile, String path) throws Exception {
 		// path=/resources/upload/product
 		String realPath = servletContext.getRealPath(path);
@@ -28,18 +36,18 @@ public class FileManager {
 		} else {
 			file.mkdirs();
 		}
-		
+
 		String oriName = multipartFile.getOriginalFilename();
-		
+
 		String fileName = UUID.randomUUID().toString();
-		fileName = fileName+"_"+oriName;
-		
+		fileName = fileName + "_" + oriName;
+
 //		file = new File(realPath, fileName);
 //		multipartFile.transferTo(file);
-		
+
 		file = new File(file, fileName);
 		FileCopyUtils.copy(multipartFile.getBytes(), file);
-		
+
 		return fileName;
 	}
 }

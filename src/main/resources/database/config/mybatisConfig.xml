@@ -9,6 +9,8 @@
   	  	<typeAlias type="com.pj.market.member.MemberDTO" alias="MemberDTO"/>
   	  	<typeAlias type="com.pj.market.product.ProductDTO" alias="ProductDTO"/>
   	  	<typeAlias type="com.pj.market.product.ProductFileDTO" alias="ProductFileDTO"/>
+  	  	<typeAlias type="com.pj.market.util.ProductPager" alias="ProductPager"/>
   	  	<typeAlias type="java.lang.Long" alias="Long" />
+  	  	<typeAlias type="java.util.List" alias="List"/>
   	</typeAliases>
   </configuration>

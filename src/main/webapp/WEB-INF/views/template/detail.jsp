@@ -1,5 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!doctype html>
-<html class="no-js" lang="en">
+<html class="no-js">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,27 +16,16 @@
   </head>
   
   <body>
-  <a href="./delete?no=${dto.no}">delete</a>
+	  <a href="./delete?no=${dto.no}">delete</a>
         <br>
       <article class="grid-container">
         <div class="grid-x grid-margin-x">
           <div class="medium-6 cell">
-	<!-- img tag -->
-            <img class="thumbnail" src="https://placehold.it/650x350">
-            <div class="grid-x grid-padding-x small-up-4">
-              <div class="cell">
-                <img src="https://placehold.it/250x200">
-              </div>
-              <div class="cell">
-                <img src="https://placehold.it/250x200">
-              </div>
-              <div class="cell">
-                <img src="https://placehold.it/250x200">
-              </div>
-              <div class="cell">
-                <img src="https://placehold.it/250x200">
-              </div>
-            </div>
+		<!-- img tag -->
+	            <img class="thumbnail" src="https://placehold.it/650x350">
+	            <div>
+	            	<img alt="" src="">
+	            </div>
           </div>
           
           <div class="medium-6 large-5 cell large-offset-1">
@@ -66,6 +59,15 @@
               </div>
             </div>
         </div>
+    
+    	<hr>
+		<div>
+			<c:forEach items="${dto.fileDTOs}" var="f">
+				<img alt="" src="../resources/upload/product/${f.fileName}">
+			</c:forEach>
+		</div>
+	 
+
     
         <div class="">
           <hr>

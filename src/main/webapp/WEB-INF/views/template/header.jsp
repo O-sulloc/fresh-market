@@ -56,8 +56,11 @@
 				</c:if>
 
 			</ul>
-			<form class="d-flex">
-			  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+			<form action="/market/product/list" method="get" class="d-flex">
+				<select name="keyword" hidden="">
+					<option value="proName" hidden="" />
+				</select>
+			  <input class="form-control me-2" value="${pager.search}" type="search" placeholder="Search" aria-label="Search" name="search">
 			  <button class="btn btn-outline-success" type="submit">Search</button>
 			</form>
 		  </div>
