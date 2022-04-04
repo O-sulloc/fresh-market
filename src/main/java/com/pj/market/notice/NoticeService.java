@@ -5,14 +5,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.pj.market.util.Pager;
+
 @Service
 public class NoticeService {
 	@Autowired
 	private NoticeDAO noticeDAO;
 	
 		//list
-		public List<NoticeDTO> list(NoticeDTO noticeDTO) throws Exception{
-			return noticeDAO.list(noticeDTO);
+		public List<NoticeDTO> list(Pager pager) throws Exception{
+			pager.makeRow();
+			pager.makeNum(noticeDAO.total(pager));
+			return noticeDAO.list(pager);
 		}
 		
 		//detail

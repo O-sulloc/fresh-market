@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.pj.market.util.Pager;
+
 @Controller
 @RequestMapping("/notice/*")
 public class NoticeController {
@@ -18,8 +20,9 @@ public class NoticeController {
 	private NoticeService noticeService;
 
 	@GetMapping("list")
-	public ModelAndView list(ModelAndView mv, NoticeDTO noticeDTO) throws Exception {
-		List<NoticeDTO> ar = noticeService.list(noticeDTO);
+	public ModelAndView list(Pager pager) throws Exception {
+		List<NoticeDTO> ar = noticeService.list(pager);
+		ModelAndView mv = new ModelAndView();
 		mv.addObject("list", ar);
 		mv.setViewName("notice/list");
 		return mv;
@@ -65,15 +68,14 @@ public class NoticeController {
 		model.addAttribute("dto", noticeDTO);
 		return "notice/update";
 	}
-	
+
 	// update DB
 	@PostMapping("update")
-	public ModelAndView update(NoticeDTO noticeDTO)throws Exception{
+	public ModelAndView update(NoticeDTO noticeDTO) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		int result= noticeService.update(noticeDTO);
+		int result = noticeService.update(noticeDTO);
 		mv.setViewName("redirect:./list");
 		return mv;
 	}
-	
 
 }

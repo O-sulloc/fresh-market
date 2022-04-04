@@ -3,29 +3,50 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-    
-    <mapper namespace="com.pj.market.notice.NoticeDAO">
-    
-    <select id="list" resultType="NoticeDTO">
-		SELECT * FROM NOTICE1
+
+<mapper namespace="com.pj.market.notice.NoticeDAO">
+
+	<select id="list" parameterType="Pager" resultType="NoticeDTO">
+
+		SELECT * FROM
+		(SELECT ROWNUM R, B.* FROM
+		(SELECT * FROM NOTICE1 WHERE
+		NUM>0
+		ORDER BY
+		NUM DESC
+		)B
+		)
+		WHERE R BETWEEN #{startRow} AND #{lastRow}
+
 	</select>
-	
+
 	<select id="detail" resultType="NoticeDTO">
-		SELECT * FROM NOTICE1 WHERE NUM = #{num}
+		SELECT * FROM NOTICE1 WHERE NUM =
+		#{num}
 	</select>
-	
+
 	<insert id="add" parameterType="NoticeDTO">
-	INSERT INTO NOTICE1
-	VALUES (NOTICE1_SEQ.NEXTVAL, #{title}, #{id}, SYSDATE, #{contents})
+		INSERT INTO NOTICE1
+		VALUES
+		(NOTICE1_SEQ.NEXTVAL, #{title}, #{id}, SYSDATE, #{contents})
 	</insert>
-	
+
 	<delete id="delete" parameterType="NoticeDTO">
-	DELETE NOTICE1 WHERE NUM = #{num}
+		DELETE NOTICE1 WHERE NUM =
+		#{num}
 	</delete>
-	
+
 	<update id="update" parameterType="NoticeDTO">
-	UPDATE NOTICE1 SET TITLE=#{title}, CONTENTS=#{contents}
-	WHERE NUM= #{num}
+		UPDATE NOTICE1 SET
+		TITLE=#{title}, CONTENTS=#{contents}
+		WHERE NUM= #{num}
 	</update>
-	
-    </mapper>
+
+	<select id="total" resultType="Long" parameterType="pager">
+		SELECT
+		COUNT(NUM) FROM NOTICE1
+		WHERE NUM>0
+	</select>
+
+
+</mapper>
