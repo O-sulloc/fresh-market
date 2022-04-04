@@ -68,8 +68,11 @@ public class NoticeController {
 	
 	// update DB
 	@PostMapping("update")
-	public void update()throws Exception{
-		
+	public ModelAndView update(NoticeDTO noticeDTO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		int result= noticeService.update(noticeDTO);
+		mv.setViewName("redirect:./list");
+		return mv;
 	}
 	
 

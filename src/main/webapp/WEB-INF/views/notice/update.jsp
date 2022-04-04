@@ -11,7 +11,8 @@
 <body>
   <h5>게시판 글 수정</h5>
   
-  <form action="./add" method="post">
+  <form action="./update" method="post">
+  <input type="hidden" readonly name="num" value="${dto.num}">
   제목 : <input type="text" id=title name="title">
   내용 : <textarea rows="" cols="50" name="contents"></textarea>
   
