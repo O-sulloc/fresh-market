@@ -42,7 +42,7 @@ public class QnaService implements BoardService{
 	@Override
 	public int delete(BoardDTO boardDTO) throws Exception {
 		// TODO Auto-generated method stub
-		return 0;
+		return qnaDAO.delete(boardDTO);
 	}
 	
 	
