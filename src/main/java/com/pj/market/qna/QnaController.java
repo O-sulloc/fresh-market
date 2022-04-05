@@ -53,5 +53,11 @@ public class QnaController {
 		return "board/detail";
 	}
 	
+	@GetMapping("delete")
+	public String delete(QnaDTO qnaDTO, Model model)throws Exception{
+		int result = qnaService.delete(qnaDTO);
+		return "redict:./list";
+	}
+	
 
 }

@@ -33,5 +33,9 @@
 	<select id="detail" resultType="QnaDTO">
 		SELECT * FROM QNA1 WHERE NUM =#{num}
 	</select>
+	
+	<delete id="delete" parameterType="QnaDTO">
+	DELETE QNA1 WHERE NUM =#{num}
+	</delete>
 
 </mapper>
