@@ -2,7 +2,9 @@ package com.pj.market.qna;
 
 import java.sql.Date;
 
-public class QnaDTO {
+import com.pj.market.board.BoardDTO;
+
+public class QnaDTO extends BoardDTO{
 	
 	private String state;
 	private Long ref;

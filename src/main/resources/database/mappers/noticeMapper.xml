@@ -21,24 +21,20 @@
 	</select>
 
 	<select id="detail" resultType="NoticeDTO">
-		SELECT * FROM NOTICE1 WHERE NUM =
-		#{num}
+		SELECT * FROM NOTICE1 WHERE NUM =#{num}
 	</select>
 
 	<insert id="add" parameterType="NoticeDTO">
 		INSERT INTO NOTICE1
-		VALUES
-		(NOTICE1_SEQ.NEXTVAL, #{title}, #{id}, SYSDATE, #{contents})
+		VALUES(NOTICE1_SEQ.NEXTVAL, #{title}, #{id}, SYSDATE, #{contents})
 	</insert>
 
 	<delete id="delete" parameterType="NoticeDTO">
-		DELETE NOTICE1 WHERE NUM =
-		#{num}
+		DELETE NOTICE1 WHERE NUM =#{num}
 	</delete>
 
 	<update id="update" parameterType="NoticeDTO">
-		UPDATE NOTICE1 SET
-		TITLE=#{title}, CONTENTS=#{contents}
+		UPDATE NOTICE1 SET TITLE=#{title}, CONTENTS=#{contents}
 		WHERE NUM= #{num}
 	</update>
 

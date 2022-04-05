@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -19,13 +20,18 @@ public class NoticeController {
 
 	@Autowired
 	private NoticeService noticeService;
+	
+	@ModelAttribute("board")
+	public String board() {
+		return "notice";
+	}
 
 	@GetMapping("list")
 	public ModelAndView list(Pager pager) throws Exception {
 		List<BoardDTO> ar = noticeService.list(pager);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("list", ar);
-		mv.setViewName("notice/list");
+		mv.setViewName("board/list");
 		return mv;
 	}
 
@@ -33,14 +39,14 @@ public class NoticeController {
 	public String detail(NoticeDTO noticeDTO, Model model) throws Exception {
 		BoardDTO boardDTO = noticeService.detail(noticeDTO);
 		model.addAttribute("dto", boardDTO);
-		return "notice/detail";
+		return "board/detail";
 	}
 
 	// add form이동
 	@GetMapping("add")
 	public ModelAndView add(NoticeDTO noticeDTO, Model model) throws Exception {
 		ModelAndView mv = new ModelAndView();
-		mv.setViewName("notice/add");
+		mv.setViewName("board/add");
 		return mv;
 	}
 
@@ -67,7 +73,7 @@ public class NoticeController {
 	public String update(NoticeDTO noticeDTO, Model model) throws Exception {
 		BoardDTO boardDTO = noticeService.detail(noticeDTO);
 		model.addAttribute("dto", noticeDTO);
-		return "notice/update";
+		return "board/update";
 	}
 
 	// update DB
