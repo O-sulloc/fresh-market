@@ -11,12 +11,6 @@
 <body>
 	<c:import url="./template/header.jsp"></c:import>
 	
-	<h1>
-		Hello world!
-	</h1>
 	
-	<P>  The time on the server is ${serverTime}. </P>
-	
-	<c:import url="./template/footer.jsp"></c:import>
 </body>
 </html>

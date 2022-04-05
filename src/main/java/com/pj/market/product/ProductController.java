@@ -69,11 +69,12 @@ public class ProductController {
 	}
 
 	@GetMapping("list")
-	public ModelAndView list(ModelAndView mv, ProductPager productPager) throws Exception {
+	public ModelAndView list(ModelAndView mv, ProductPager productPager,ProductDTO productDTO) throws Exception {
 
 		List<ProductDTO> ar = productService.list(productPager);
 		mv.addObject("list", ar);
 		mv.addObject("pager", productPager);
+		mv.addObject("dto", productDTO);
 		mv.setViewName("product/list");
 		return mv;
 	}

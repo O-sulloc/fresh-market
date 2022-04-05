@@ -73,11 +73,24 @@
     	<select id="list" parameterType="ProductPager" resultType="ProductDTO">
     		SELECT * FROM 
     			(select rownum R, P.* From
-    				(select * from product where no>0 
-    				and proname like '%' || #{search} || '%' 
-    				ORDER BY NO DESC
+    				(select * from product 
+	    				where no>0
+	    				and
+	    				proname like '%' || #{search} || '%' 
+	    				ORDER BY NO DESC
     				) P
     			)
-    		where R between #{startRow} and #{lastRow}
+    		where R between #{startRow} and #{lastRow} 
+	    			<choose>
+	    				<when test="category==1">
+	    					and category =1
+	    				</when>
+	    				<when test="category==2">
+	    					and category =2
+	    				</when>
+	    				<when test="category==3">
+	    					and category =3
+	    				</when>
+	    			</choose>
     	</select>
     </mapper>

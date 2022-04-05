@@ -37,9 +37,22 @@
 
 		<div class="col-md-offset-3 col-md-6">
 			<label class="form-label">카테고리</label>
-			채소<input type="radio" name="category" value="1" >
-			수산<input type="radio" name="category" value="2">
-			정육<input type="radio" name="category" value="3">
+			<c:if test="${dto.category eq 1}"> <!-- 나중ㅇㅔ 3항연산자로 써보기 -->
+				채소<input type="radio" name="category" value="1" checked="checked">
+				수산<input type="radio" name="category" value="2">
+				정육<input type="radio" name="category" value="3">
+			</c:if>
+			<c:if test="${dto.category eq 2}">
+				채소<input type="radio" name="category" value="1">
+				수산<input type="radio" name="category" value="2"  checked="checked">
+				정육<input type="radio" name="category" value="3">
+			</c:if>
+			<c:if test="${dto.category eq 3}">
+				채소<input type="radio" name="category" value="1">
+				수산<input type="radio" name="category" value="2">
+				정육<input type="radio" name="category" value="3" checked="checked">
+			</c:if>
+			
 		</div>
 		
 		<div id="files">
@@ -61,7 +74,6 @@
 	</form>
 
 	<script src="../resources/js/file.js"></script>
-	<script src="../resources/js/update.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
 </body>

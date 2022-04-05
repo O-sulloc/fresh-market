@@ -14,6 +14,7 @@ public class ProductPager {
 	// search 검색에서 사용될 변수들 선언
 	private String search;
 	private String keyword;
+	private Long category;
 	// 여기까지
 
 	// jsp에서 사용할 변수들
@@ -190,6 +191,12 @@ public class ProductPager {
 		this.keyword = keyword;
 	}
 
+	public Long getCategory() {
+		return category;
+	}
 
+	public void setCategory(Long category) {
+		this.category = category;
+	}
 
 }
