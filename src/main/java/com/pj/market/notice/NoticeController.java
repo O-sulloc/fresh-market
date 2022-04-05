@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.pj.market.board.BoardDTO;
 import com.pj.market.util.Pager;
 
 @Controller
@@ -21,7 +22,7 @@ public class NoticeController {
 
 	@GetMapping("list")
 	public ModelAndView list(Pager pager) throws Exception {
-		List<NoticeDTO> ar = noticeService.list(pager);
+		List<BoardDTO> ar = noticeService.list(pager);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("list", ar);
 		mv.setViewName("notice/list");
@@ -30,8 +31,8 @@ public class NoticeController {
 
 	@GetMapping("detail")
 	public String detail(NoticeDTO noticeDTO, Model model) throws Exception {
-		noticeDTO = noticeService.detail(noticeDTO);
-		model.addAttribute("dto", noticeDTO);
+		BoardDTO boardDTO = noticeService.detail(noticeDTO);
+		model.addAttribute("dto", boardDTO);
 		return "notice/detail";
 	}
 
@@ -64,7 +65,7 @@ public class NoticeController {
 	// update form
 	@GetMapping("update")
 	public String update(NoticeDTO noticeDTO, Model model) throws Exception {
-		noticeDTO = noticeService.detail(noticeDTO);
+		BoardDTO boardDTO = noticeService.detail(noticeDTO);
 		model.addAttribute("dto", noticeDTO);
 		return "notice/update";
 	}

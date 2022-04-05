@@ -5,38 +5,40 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.pj.market.board.BoardDTO;
+import com.pj.market.board.BoardService;
 import com.pj.market.util.Pager;
 
 @Service
-public class NoticeService {
+public class NoticeService implements BoardService {
 	@Autowired
 	private NoticeDAO noticeDAO;
 	
 		//list
-		public List<NoticeDTO> list(Pager pager) throws Exception{
+		public List<BoardDTO> list(Pager pager) throws Exception{
 			pager.makeRow();
 			pager.makeNum(noticeDAO.total(pager));
 			return noticeDAO.list(pager);
 		}
 		
 		//detail
-		public NoticeDTO detail(NoticeDTO noticeDTO)throws Exception{
-			return noticeDAO.detail(noticeDTO);
+		public BoardDTO detail(BoardDTO boardDTO)throws Exception{
+			return noticeDAO.detail(boardDTO);
 		}
 		
 		//add
-		public int add(NoticeDTO noticeDTO)throws Exception{
-			return noticeDAO.add(noticeDTO);
+		public int add(BoardDTO boardDTO)throws Exception{
+			return noticeDAO.add(boardDTO);
 		}
 		
 		//delete
-		public int delete(NoticeDTO noticeDTO)throws Exception{
-			return noticeDAO.delete(noticeDTO);
+		public int delete(BoardDTO boardDTO)throws Exception{
+			return noticeDAO.delete(boardDTO);
 		}
 		
 		//update
-		public int update(NoticeDTO noticeDTO) throws Exception{
-			return noticeDAO.update(noticeDTO);
+		public int update(BoardDTO boardDTO) throws Exception{
+			return noticeDAO.update(boardDTO);
 		}
 
 }

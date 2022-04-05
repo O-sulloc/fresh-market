@@ -10,5 +10,6 @@
   	  	<typeAlias type="com.pj.market.notice.NoticeDTO" alias="NoticeDTO"/>
   	  	<typeAlias type="com.pj.market.util.Pager" alias="Pager"/>
   	  	<typeAlias type="java.lang.Long" alias="Long"/>
+  	  	<typeAlias type="com.pj.market.qna.QnaDTO" alias="QnaDTO"/>
   	</typeAliases>
   </configuration>
