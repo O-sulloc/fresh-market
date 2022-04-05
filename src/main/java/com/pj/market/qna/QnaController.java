@@ -7,10 +7,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.pj.market.board.BoardDTO;
+import com.pj.market.notice.NoticeDTO;
 import com.pj.market.util.Pager;
 
 @Controller
@@ -32,11 +34,23 @@ public class QnaController {
 		return "board/list";
 	}
 	@GetMapping("add")
-	public ModelAndView add()throws Exception{
+	public ModelAndView add(QnaDTO qnaDTO)throws Exception{
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("board/add");
 		return mv;
-		
+	}
+	
+	@PostMapping("add")
+	public String add(Model model, QnaDTO qnaDTO)throws Exception{
+		int boardDTO = qnaService.add(qnaDTO);
+		return "redirect:./list";
+	}
+	
+	@GetMapping("detail")
+	public String detail(QnaDTO qnaDTO, Model model)throws Exception{
+		BoardDTO boardDTO = qnaService.detail(qnaDTO);
+		model.addAttribute("dto", boardDTO);
+		return "board/detail";
 	}
 	
 
