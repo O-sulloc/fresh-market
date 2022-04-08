@@ -8,8 +8,12 @@
   	<typeAliases>
   	  	<typeAlias type="com.pj.market.member.MemberDTO" alias="MemberDTO"/>
   	  	<typeAlias type="com.pj.market.notice.NoticeDTO" alias="NoticeDTO"/>
-  	  	<typeAlias type="com.pj.market.util.Pager" alias="Pager"/>
-  	  	<typeAlias type="java.lang.Long" alias="Long"/>
   	  	<typeAlias type="com.pj.market.qna.QnaDTO" alias="QnaDTO"/>
+  	  	<typeAlias type="com.pj.market.product.ProductDTO" alias="ProductDTO"/>
+  	  	<typeAlias type="com.pj.market.product.ProductFileDTO" alias="ProductFileDTO"/>
+  	  	<typeAlias type="com.pj.market.util.ProductPager" alias="ProductPager"/>
+  	  	<typeAlias type="com.pj.market.util.Pager" alias="Pager"/>  	  	
+  	  	<typeAlias type="java.lang.Long" alias="Long"/>
+  	  	<typeAlias type="java.util.List" alias="List"/>
   	</typeAliases>
   </configuration>
