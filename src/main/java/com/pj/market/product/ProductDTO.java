@@ -10,13 +10,15 @@ public class ProductDTO {
 	private String contents;
 	private Long category;
 
-	private List<ProductDTO> fileDTOs;
+	private List<ProductFileDTO> fileDTOs;
 	
-	public List<ProductDTO> getFileDTOs() {
+
+
+	public List<ProductFileDTO> getFileDTOs() {
 		return fileDTOs;
 	}
 
-	public void setFileDTOs(List<ProductDTO> fileDTOs) {
+	public void setFileDTOs(List<ProductFileDTO> fileDTOs) {
 		this.fileDTOs = fileDTOs;
 	}
 

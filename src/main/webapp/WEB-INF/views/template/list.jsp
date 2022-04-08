@@ -36,8 +36,10 @@
           	<c:forEach items="${list}" var="product">
             <div class="col">
               <div class="card shadow-sm">
-              	<img alt="" src="" width="100%" height="225">
-
+              
+              <c:catch>
+              	<img alt="" src="../resources/upload/product/${product.fileDTOs[0].fileName}" width="100%" height="225">
+				</c:catch>
                 <div class="card-body">
                   <p class="card-text"><a href="./detail?no=${product.no}">${product.proName}</a></p>
                   <div class="d-flex justify-content-between align-items-center">
@@ -52,6 +54,7 @@
               </div>
             </div>
  			</c:forEach>
+ 			
  			<div>
  				<c:if test="${pager.pre}">
  					<a href="./list?page=${pager.startNum-1 }">previous</a>

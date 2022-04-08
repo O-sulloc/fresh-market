@@ -47,18 +47,7 @@
 				<input readonly value="${dto.price}" name="price">원
 				
 
-				<div class="input-group input-number-group">
-					<label for="middle-label" class="middle">수량</label>
-					<div class="input-group-button">
-						<span class="input-number-decrement">-</span>
-					</div>
-					<input class="input-number" type="number" readonly value="1" name="amount">
-					<div class="input-group-button">
-						<span class="input-number-increment">+</span>
-					</div>
-				</div>
-
-				<h3>총 상품 금액: <input type="number" name="sum" readonly value="${dto.price}"> 원</h3>
+				
 				<a href="#" class="button large expanded">Buy Now</a>
 				
 			</div>
@@ -73,54 +62,12 @@
 
 
 
-		<div class="">
-			<hr>
-			<ul class="tabs" data-tabs id="example-tabs">
-				<li class="tabs-title is-active"><a href="#panel1"
-					aria-selected="true">Reviews</a></li>
-				<li class="tabs-title"><a href="#panel2">Similar Products</a></li>
-			</ul>
-			<div class="tabs-content" data-tabs-content="example-tabs">
-				<div class="tabs-panel is-active" id="panel1">
-					<h4>Reviews</h4>
-					<div class="media-object stack-for-small">
-						<div class="media-object-section">
-							<img class="thumbnail" src="https://placehold.it/200x200">
-						</div>
-						<div class="media-object-section">
-							<h5>Mike Stevenson</h5>
-							<p>I'm going to improvise. Listen, there's something you
-								should know about me... about inception. An idea is like a
-								virus, resilient, highly contagious. The smallest seed of an
-								idea can grow. It can grow to define or destroy you</p>
-						</div>
-					</div>
-					<label> My Review <textarea placeholder="None"></textarea>
-					</label>
-					<button class="button">Submit Review</button>
-				</div>
-				<div class="tabs-panel" id="panel2">
-					<div class="grid-x grid-margin-x medium-up-3 large-up-5">
-						<div class="cell">
-							<img class="thumbnail" src="https://placehold.it/350x200">
-							<h5>
-								Other Product <small>$22</small>
-							</h5>
-							<p>In condimentum facilisis porta. Sed nec diam eu diam
-								mattis viverra. Nulla fringilla, orci ac euismod semper, magna
-								diam.</p>
-							<a href="#" class="button hollow tiny expanded">Buy Now</a>
-						</div>
-						
-					</div>
-				</div>
-			</div>
-		</div>
+		
 
 
 	</article>
 
-
+	
 	<script src="../resources/js/detail.js"></script>
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script

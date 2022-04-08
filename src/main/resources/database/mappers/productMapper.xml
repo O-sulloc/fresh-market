@@ -69,11 +69,17 @@
         	where no>0 
     		and proname like '%' || #{search} || '%' 
         </select>
-        	
-    	<select id="list" parameterType="ProductPager" resultType="ProductDTO">
+			
+    	<select id="list" parameterType="ProductPager" resultMap="detailResult">
     		SELECT * FROM 
     			(select rownum R, P.* From
-    				(select * from product 
+    				(select * from 
+    					(select *
+    					from product p1
+    						left outer join
+    					productfile pf
+    					using (no)
+    					)
 	    				where no>0
 	    				and
 	    				proname like '%' || #{search} || '%' 
@@ -92,5 +98,6 @@
 	    					and category =3
 	    				</when>
 	    			</choose>
+		     		
     	</select>
     </mapper>
