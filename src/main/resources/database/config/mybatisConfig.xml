@@ -11,5 +11,6 @@
   	  	<typeAlias type="com.pj.market.util.Pager" alias="Pager"/>
   	  	<typeAlias type="java.lang.Long" alias="Long"/>
   	  	<typeAlias type="com.pj.market.qna.QnaDTO" alias="QnaDTO"/>
+  	  	<typeAlias type="com.pj.market.qna.QnaReply.QnaReplyDTO" alias="QnaReplyDTO"/>
   	</typeAliases>
   </configuration>
