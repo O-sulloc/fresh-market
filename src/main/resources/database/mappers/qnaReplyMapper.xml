@@ -6,10 +6,12 @@
 
 <mapper namespace="com.pj.market.qna.QnaReply.QnaReplyDAO">
 
-	<select id="list" parameterType="QnaReplyDTO" resultType="QnaReplyDTO">
-	SELECT * FROM QNAREPLY
-	WHERE NUM = #{num}
-	ORDER BY REPLYNUM DESC
+	
+		<select id="list" resultType="QnaReplyDTO">
+		SELECT * FROM QNAREPLY
+		WHERE NUM = #{num}
+		ORDER BY REPLYNUM DESC
+		
 	</select>
 
 </mapper>

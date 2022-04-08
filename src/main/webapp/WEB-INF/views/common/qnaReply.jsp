@@ -8,11 +8,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	댓글달기
 
 	<c:forEach items="${qnaReply}" var="dto">
 	<tr>
-		<td></td>
+		<td id="up${dto.replyNum}">${dto.contents}</td>
+		<td>${dto.id}</td>
+		
 	</tr>
 	</c:forEach>
 </body>
