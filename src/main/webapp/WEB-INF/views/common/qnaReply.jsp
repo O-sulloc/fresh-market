@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 	<c:forEach items="${qnaReply}" var="dto">
-		<tr>
+		<tr class="bg">
 			<td id="up${dto.replyNum}">${dto.contents}</td>
 			<td>${dto.id}</td>
 
