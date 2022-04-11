@@ -31,6 +31,13 @@
 					</ul>
 				</li>
 
+				<li class="nav-item">
+						<a class="nav-link" href="/market/notice/list">Notice</a>
+				</li>
+				<li class="nav-item">
+						<a class="nav-link" href="/market/qna/list">Qna</a>
+				</li>
+
 				<c:if test="${empty member}">
 					<li class="nav-item">
 						<a class="nav-link" href="/market/member/join">회원가입</a>

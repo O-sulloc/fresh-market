@@ -27,7 +27,9 @@
 
 </head>
 <body>
-	
+	<c:if test="${member.id eq 'admin1234' }">
+		<a href="./add">상품 추가</a>
+	</c:if>
       <div class="album py-5 bg-light">
         <div class="container">
     
@@ -45,8 +47,11 @@
                   <div class="d-flex justify-content-between align-items-center">
                     <div class="btn-group">
                       <button type="button" class="btn btn-sm btn-outline-secondary">장바구니</button>
-                      <button type="button" id="updateBtn" onclick="location.href='./update?no=${product.no}'" class="btn btn-sm btn-outline-secondary">수정(관리자)</button>
-                      <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='./delete?no=${product.no}'">삭제(관리자)</button>
+                      
+                      <c:if test="${member.id eq 'admin1234' }">
+	                      <button type="button" id="updateBtn" onclick="location.href='./update?no=${product.no}'" class="btn btn-sm btn-outline-secondary">수정(관리자)</button>
+	                      <button type="button" class="btn btn-sm btn-outline-secondary" onclick="location.href='./delete?no=${product.no}'">삭제(관리자)</button>
+                      </c:if>
                     </div>
                     <small class="text-muted">${product.price}원</small>
                   </div>
@@ -72,7 +77,7 @@
       </div>
 	</div>
 	
-	<a href="./add">상품 추가</a>
+	
 	
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
