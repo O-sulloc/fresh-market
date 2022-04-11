@@ -38,10 +38,26 @@ public class QnaReplyController {
 		return mv;
 	}
 	
-	/*
-	 * @PostMapping("delete") public ModelAndView delete(QnaReplyDTO
-	 * qnaReplyDTO)throws Exception{ System.out.println(qnaReplyDTO.getReplyNum());
-	 * return null; }
-	 */
+	@PostMapping("delete")
+	public ModelAndView delete(QnaReplyDTO qnaReplyDTO)throws Exception{
+		System.out.println(qnaReplyDTO.getReplyNum());
+		 int result = qnaReplyService.delete(qnaReplyDTO);
+		 ModelAndView mv = new ModelAndView();
+		 mv.setViewName("common/ajaxResult");
+		 mv.addObject("result", result);
+		 return mv;
+	}
+	
+	@PostMapping("update")
+	public ModelAndView update(QnaReplyDTO qnaReplyDTO)throws Exception{
+		ModelAndView mv = new ModelAndView();
+		System.out.println(qnaReplyDTO.getContents());
+		System.out.println(qnaReplyDTO.getReplyNum());
+		int result = qnaReplyService.update(qnaReplyDTO);
+		System.out.println(result);
+		mv.setViewName("common/ajaxResult");
+		mv.addObject("result", result);
+		return mv;
+	}
 
 }

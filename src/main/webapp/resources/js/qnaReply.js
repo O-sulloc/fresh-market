@@ -6,6 +6,21 @@ const replyResult = document.querySelector("#replyResult");
 const del = document.querySelector(".del");
 
 
+//update
+replyResult.addEventListener("click", function(event){
+if(event.target.classList.contains('update')){
+    //event.target.classList.replace('update', reply);
+    let num = event.target.getAttribute('data-index'); // num
+    let replyNum = document.querySelector("#up"+num); //td
+
+    let text = replyNum.innerText;
+    replyNum.innerText='';
+
+    let tx = document.createElement
+    
+}
+});
+
 // delete
 replyResult.addEventListener("click", function(event){
 
