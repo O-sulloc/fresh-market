@@ -6,12 +6,17 @@
 
 <mapper namespace="com.pj.market.qna.QnaReply.QnaReplyDAO">
 
+	<insert id="add" parameterType="QnaReplyDTO">
+		INSERT INTO QNAREPLY
+		VALUES (NOTICE_SEQ.NEXTVAL, #{num}, #{id}, #{contents}, sysdate)
+	</insert>
 	
-		<select id="list" resultType="QnaReplyDTO">
+	<select id="list" parameterType="QnaReplyDTO" resultType="QnaReplyDTO">
 		SELECT * FROM QNAREPLY
 		WHERE NUM = #{num}
 		ORDER BY REPLYNUM DESC
-		
 	</select>
+	
+	
 
 </mapper>

@@ -14,6 +14,8 @@
 </head>
 <body>
 
+<h1>${board} 페이지</h1>
+
 	<table class="table">
 		<thead>
 			<tr>
