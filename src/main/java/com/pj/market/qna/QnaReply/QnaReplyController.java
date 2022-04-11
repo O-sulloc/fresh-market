@@ -28,10 +28,10 @@ public class QnaReplyController {
 	
 	@GetMapping("list")
 	public ModelAndView list(QnaReplyDTO qnaReplyDTO)throws Exception{
-		System.out.println("list!");
-		System.out.println(qnaReplyDTO.getNum());
+		//System.out.println("list!");
+		//System.out.println(qnaReplyDTO.getNum());
 		List<QnaReplyDTO> ar = qnaReplyService.list(qnaReplyDTO);
-		System.out.println(ar);
+		//System.out.println(ar);
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("qnaReply", ar);
 		mv.setViewName("common/qnaReply");

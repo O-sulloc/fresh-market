@@ -16,7 +16,14 @@ if(event.target.classList.contains('update')){
     let text = replyNum.innerText;
     replyNum.innerText='';
 
-    let tx = document.createElement
+    let tx = document.createElement('textarea');
+    tx.setAttribute("id", "update"+num);
+    tx.classList.add("reply");
+    tx.setAttribute("data-num", num);
+    tx.value=text;
+
+    //console.log(tx);
+    replyNum.append(tx);
     
 }
 });
@@ -36,7 +43,7 @@ replyResult.addEventListener("click", function(event){
         xhttp.onreadystatechange=function(){
             if(this.readyState==4 && this.status==200){
                 console.log(this.responseText);
-                if(this.responseText.trim()=='1');
+                if(this.responseText.trim()=='1'){
                 alert('삭제성공');
                 getList();
             }else{
@@ -44,6 +51,7 @@ replyResult.addEventListener("click", function(event){
             }
         }
     }
+}
 });
 
     //list
