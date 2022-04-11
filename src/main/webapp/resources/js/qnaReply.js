@@ -28,6 +28,33 @@ if(event.target.classList.contains('update')){
 }
 });
 
+replyResult.addEventListener("change", function(event){
+    if(event.target.classList.contains('reply')){
+        let contents = event.target.getAttribute("data-num");
+        console.log("contents", contents);
+        console.log(event.target);
+        let check = window.confirm("수정하시겠습니까?"); // 확인 true 취소 false
+
+        if(check){
+            let xhttp = new XMLHttpRequest();
+            xhttp.open("POST", "../qnaReply/update");
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send("replyNum="+replyNum&"contents="+contents);
+            xhttp.onreadystatechange=function(){
+                if(this.readyState==4 && this.status==200){
+                    console.log(this.responseText);
+                    if(this.responseText.trim=='1'){
+                        alert('댓글 수정 성공');
+                        document.querySelector("#up"+replyNum).innerHTML=contents;
+                    }else{
+                        alert('댓글 수정 실패');
+                    }
+                }
+            }
+        }
+    }
+});
+
 // delete
 replyResult.addEventListener("click", function(event){
 
@@ -44,10 +71,10 @@ replyResult.addEventListener("click", function(event){
             if(this.readyState==4 && this.status==200){
                 console.log(this.responseText);
                 if(this.responseText.trim()=='1'){
-                alert('삭제성공');
+                alert('댓글 삭제 성공');
                 getList();
             }else{
-                alert('삭제실패');
+                alert('댓글 삭제 실패');
             }
         }
     }
@@ -96,9 +123,9 @@ reply.addEventListener("click", function(){
             console.log(this.responseText);
             let result = this.responseText.trim();
             if(result == '1'){
-                alert('댓글이 등록 되었습니다.');
+                alert('댓글 등록 성공');
             }else{
-                alert('댓글 등록이 실패했습니다.')
+                alert('댓글 등록 실패');
             }
         }
     }
