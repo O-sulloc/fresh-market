@@ -10,6 +10,8 @@
 <body>
 	<c:import url="../template/header.jsp"></c:import>
 	
+	<br>
+	
 	<c:import url="../template/detail.jsp"></c:import>
 	
 	<c:import url="../template/footer.jsp"></c:import>

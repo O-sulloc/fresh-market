@@ -19,17 +19,11 @@
 	rel='stylesheet' type='text/css'>
 <!-- optional CDN for Foundation Icons ^^ -->
 <link href="../resources/css/detail.css" rel="stylesheet">
-<!--수량-->
-<link
-	href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css"
-	rel="stylesheet" id="bootstrap-css">
-<script
-	src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
 </head>
 
 <body>
-	<a href="./delete?no=${dto.no}">delete</a>
+	
 	<br>
 	<article class="grid-container">
 		<div class="grid-x grid-margin-x">
@@ -60,7 +54,7 @@
 			</c:forEach>
 		</div>
 
-
+<a href="./delete?no=${dto.no}">delete</a>
 
 		
 
@@ -68,7 +62,7 @@
 	</article>
 
 	
-	<script src="../resources/js/detail.js"></script>
+	
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js"></script>

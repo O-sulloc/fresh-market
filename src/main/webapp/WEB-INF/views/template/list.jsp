@@ -58,8 +58,8 @@
                 </div>
               </div>
             </div>
- 			</c:forEach>
- 			
+ 			</c:forEach>		
+        </div>
  			<div>
  				<c:if test="${pager.pre}">
  					<a href="./list?page=${pager.startNum-1 }">previous</a>
@@ -73,7 +73,6 @@
  					<a href="./list?page=${pager.lastNum+1 }">Next</a>
  				</c:if>
  			</div>
-        </div>
       </div>
 	</div>
 	
