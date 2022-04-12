@@ -53,7 +53,8 @@
 						  마이 페이지
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-						  <li><a class="dropdown-item" href="#">주문내역</a></li>
+						  <li><a class="dropdown-item" href="">주문내역</a></li>
+						  <li><a class="dropdown-item" href="/market/cart/list">장바구니</a></li>
 						  <li><a class="dropdown-item" href="/market/member/loginCheck">개인 정보 수정</a></li>
 						</ul>
 					</li>
