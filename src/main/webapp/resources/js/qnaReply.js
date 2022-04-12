@@ -6,6 +6,7 @@ const replyResult = document.querySelector("#replyResult");
 const del = document.querySelector(".del");
 
 
+
 //update
 replyResult.addEventListener("click", function(event){
 if(event.target.classList.contains('update')){
@@ -30,7 +31,9 @@ if(event.target.classList.contains('update')){
 
 replyResult.addEventListener("change", function(event){
     if(event.target.classList.contains('reply')){
-        let contents = event.target.getAttribute("data-num");
+        let replyNum = event.target.getAttribute('data-num'); // num
+        console.log(replyNum);
+        let contents = event.target.value
         console.log("contents", contents);
         console.log(event.target);
         let check = window.confirm("수정하시겠습니까?"); // 확인 true 취소 false
@@ -43,7 +46,7 @@ replyResult.addEventListener("change", function(event){
             xhttp.onreadystatechange=function(){
                 if(this.readyState==4 && this.status==200){
                     console.log(this.responseText);
-                    if(this.responseText.trim=='1'){
+                    if(this.responseText.trim()=='1'){
                         alert('댓글 수정 성공');
                         document.querySelector("#up"+replyNum).innerHTML=contents;
                     }else{
@@ -124,6 +127,7 @@ reply.addEventListener("click", function(){
             let result = this.responseText.trim();
             if(result == '1'){
                 alert('댓글 등록 성공');
+                getList();
             }else{
                 alert('댓글 등록 실패');
             }
