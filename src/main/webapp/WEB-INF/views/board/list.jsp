@@ -11,8 +11,19 @@
 	rel="stylesheet"
 	integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
 	crossorigin="anonymous">
+
+	
 </head>
 <body>
+
+<figure class="text-center">
+  <blockquote class="blockquote">
+    <p>${board}</p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+    <cite title="Source Title">컬리의 새로운 소식들과 유용한 정보들을 한곳에서 확인하세요</cite>
+  </figcaption>
+</figure>
 
 	<table class="table">
 		<thead>
@@ -32,8 +43,9 @@
 			</tr>
 		</c:forEach>
 	</table>
+	
 
-	<a href="./add"><button type="submit">글쓰기</button></a>
+	<a href="./add"><button type="button" class="btn btn-outline-secondary">글쓰기</button></a>
 
 	<c:if test="${pager.pre}">
 		<a href="./list?page=${pager.startNum-1}">PREVIEW</a>
