@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 #myCarousel{
-  margin-top: 1%;
+  
 }
 
 .bd-placeholder-img {
@@ -23,4 +23,9 @@
   align-items: center;
   padding-top: 90px;
   padding-bottom: 40px;
+}
+
+.row {
+	align-items: center;
+	text-align: center;
 }
