@@ -16,6 +16,8 @@
 </head>
 <body>
 
+<c:import url="../template2/header.jsp"></c:import>
+
 <figure class="text-center">
   <blockquote class="blockquote">
     <p>${board}</p>
@@ -58,6 +60,8 @@
 	<c:if test="${pager.next}">
 		<a href="./list?page=${pager.lastNum+1}">NEXT</a>
 	</c:if>
+	
+	<c:import url="../template2/footer.jsp"></c:import>
 
 </body>
 </html>
