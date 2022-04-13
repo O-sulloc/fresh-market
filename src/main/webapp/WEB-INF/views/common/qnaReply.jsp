@@ -8,8 +8,10 @@
 			<td>${dto.id}</td>
 
 		<td>
+			<c:if test="${not empty member}">
 				<button class="update" type="button" data-index="${dto.replyNum}">수정</button>
 				<button class="del" type="button" data-num="${dto.replyNum}">삭제</button>
+		</c:if>
 		</td>
 		</tr>
 	</c:forEach>
