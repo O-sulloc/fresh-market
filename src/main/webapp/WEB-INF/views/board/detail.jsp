@@ -25,11 +25,13 @@
 	<td>${dto.contents}</td>
 
 <div>
+
    <c:if test="${not empty member}">
    <a href="./delete?num=${dto.num}"><button type="button" class="btn btn-outline-danger">삭제</button></a>
    <a href="./update?num=${dto.num}"><button type="button" class="btn btn-outline-success">수정</button></a>
    <a href="./list"><button type="button" class="btn btn-outline-dark">목록</button></a>
    </c:if>
+
 </div>
 
 	<hr>
