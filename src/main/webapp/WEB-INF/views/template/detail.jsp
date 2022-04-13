@@ -24,6 +24,7 @@
 
 <body>
 	
+	<form action="../cart/add" method="post" id="frm">
 	<br>
 	<article class="grid-container">
 		<div class="grid-x grid-margin-x">
@@ -36,13 +37,18 @@
 			</div>
 
 			<div class="medium-6 large-5 cell large-offset-1">
-				<h3>${dto.proName}</h3>
+				<h3>상품명: ${dto.proName}</h3>
 				<p>${dto.contents}</p>
 				<input readonly value="${dto.price}" name="price">원
 				
-
-				
-				<a href="#" class="button large expanded">Buy Now</a>
+				<select name="count" size="">
+					<c:forEach begin="1" end="10" var="i">
+						<option value="${i}">${i}</option>
+					</c:forEach>
+				</select>
+				<input type="hidden" name="no" value="${dto.no}">
+				<input type="hidden" name="id" value="${member.id}">
+				<button type="submit" class="btn btn-primary" id="btn">장바구니 담기</button>
 				
 			</div>
 		</div>
@@ -50,16 +56,16 @@
 		<hr>
 		<div>
 			<c:forEach items="${dto.fileDTOs}" var="f">
-				<img alt="" src="../resources/upload/product/${f.fileName}">
+				<div class="pic">
+					<img alt="" src="../resources/upload/product/${f.fileName}">
+				</div>
 			</c:forEach>
 		</div>
 
-<a href="./delete?no=${dto.no}">delete</a>
-
-		
-
+	<a href="./delete?no=${dto.no}">delete</a>
 
 	</article>
+	</form>
 
 	
 	
@@ -72,5 +78,6 @@
 		$(document).foundation();
 	</script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	
 </body>
 </html>

@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -72,6 +73,7 @@ public class ProductController {
 	public ModelAndView list(ModelAndView mv, ProductPager productPager,ProductDTO productDTO) throws Exception {
 
 		List<ProductDTO> ar = productService.list(productPager);
+		System.out.println(ar.size());
 		mv.addObject("list", ar);
 		mv.addObject("pager", productPager);
 		mv.addObject("dto", productDTO);

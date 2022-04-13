@@ -30,14 +30,14 @@
 	      
 	      
 	      <div class="carousel-item">
-			<a href="/market/product/detail?no=216">
+			<a href="/market/notice/detail?num=1">
 	      		<img alt="" src="./resources/img/img4.PNG" class="bd-placeholder-img" width="100%" height="50%">
 	      	</a>
 	      </div>
 	      
 	      
 	      <div class="carousel-item">
-	        <a href="/market/product/detail?no=216">
+	        <a href="/market/notice/detail?num=21">
 	      		<img alt="" src="./resources/img/img5.PNG" class="bd-placeholder-img" width="100%" height="50%">
 	      	</a>
 	      </div>
@@ -67,7 +67,7 @@
 		<img alt="" src="./resources/img/img8.PNG" class="bd-placeholder-img" width="140" height="140">
         <h2>망고</h2>
         <p>맛있어요</p>
-        <p><a class="btn btn-secondary" href="/market/product/detail?no=221">상품 보러가기 &raquo;</a></p>
+        <p><a class="btn btn-secondary" href="/market/product/detail?no=297">상품 보러가기 &raquo;</a></p>
         
       </div>
       
@@ -77,7 +77,7 @@
 
         <h2>딸기</h2>
         <p>싸다</p>
-        <p><a class="btn btn-secondary" href="/market/product/detail?no=241">상품 보러가기 &raquo;</a></p>
+        <p><a class="btn btn-secondary" href="/market/product/detail?no=298">상품 보러가기 &raquo;</a></p>
       </div>
       
       <!-- /.col-lg-4 -->
@@ -85,7 +85,7 @@
         <img alt="" src="./resources/img/img9.PNG" class="bd-placeholder-img" width="140" height="140">
         <h2>수박</h2>
         <p>여름</p>
-        <p><a class="btn btn-secondary" href="/market/product/detail?no=242">상품 보러가기 &raquo;</a></p>
+        <p><a class="btn btn-secondary" href="/market/product/detail?no=299">상품 보러가기 &raquo;</a></p>
       </div>
       
       <!-- /.col-lg-4 -->
@@ -93,7 +93,7 @@
         <img alt="" src="./resources/img/img10.PNG" class="bd-placeholder-img" width="140" height="140">
         <h2>메론</h2>
         <p>제철</p>
-        <p><a class="btn btn-secondary" href="/market/product/detail?no=261">상품 보러가기 &raquo;</a></p>
+        <p><a class="btn btn-secondary" href="/market/product/detail?no=300">상품 보러가기 &raquo;</a></p>
       </div>
       <!-- /.col-lg-4 -->
     </div><!-- /.row -->

@@ -12,5 +12,6 @@
 		alert('${message}');
 		window.location.href="${path}";
 	</script>
+	
 </body>
 </html>

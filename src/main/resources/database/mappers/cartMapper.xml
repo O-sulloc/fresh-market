@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+<mapper namespace="com.pj.market.cart.CartDAO">
+	<update id="update" parameterType="CartDTO">
+		Update cart
+		SET count=#{count}
+		where no = #{no} and id=#{id}
+	</update>
+	
+	<delete id="delete" parameterType="CartDTO">
+		Delete cart
+		SET CARTNUM=#{cartNum}, no=#{no}, id=#{id}, count=#{count}
+		where no = #{no} and id=#{id}
+	</delete>
+
+	<insert id="add" parameterType="CartDTO">
+		INSERT INTO CART (cartnum, no, id, count)
+		VALUES(cart_seq.nextval, #{no}, #{id}, #{count})
+	</insert>
+	
+	<select id="list" resultType="CartDTO" parameterType="CartDTO">
+		select m.address, m.id, p.proname, p.no, p.price, c.cartnum, c.count, p.price*c.count totalprice
+			from member1 m, product p, cart c
+			where m.id = c.id and p.no = c.no
+	</select>
+</mapper>

@@ -12,6 +12,7 @@
   	  	<typeAlias type="com.pj.market.qna.QnaReply.QnaReplyDTO" alias="QnaReplyDTO"/>
   	  	<typeAlias type="com.pj.market.product.ProductDTO" alias="ProductDTO"/>
   	  	<typeAlias type="com.pj.market.product.ProductFileDTO" alias="ProductFileDTO"/>
+  	  	<typeAlias type="com.pj.market.cart.CartDTO" alias="CartDTO"/>
   	  	<typeAlias type="com.pj.market.util.ProductPager" alias="ProductPager"/>
   	  	<typeAlias type="com.pj.market.util.Pager" alias="Pager"/>  	  	
   	  	<typeAlias type="java.lang.Long" alias="Long"/>

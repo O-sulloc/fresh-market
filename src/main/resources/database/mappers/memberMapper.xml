@@ -24,5 +24,10 @@
 		insert into member1 (id, pw, name, email, address)
 		values (#{id}, #{pw}, #{name}, #{email}, #{address})
 	</insert>
+	
+	<delete id="delete" parameterType="MemberDTO">
+		delete from member1
+		where id=#{id}
+	</delete>
     
 </mapper>

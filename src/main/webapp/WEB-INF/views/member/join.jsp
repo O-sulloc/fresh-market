@@ -68,11 +68,6 @@
 				<label class="list-group-item">
 				  <input class="form-check-input me-1" type="checkbox" value="">
 				  이용 약관 동의 (필수)
-				  <div class="termsText">
-					"제1조(목적)"
-					<br>
-					"이 약관은"
-				  </div>
 				</label>
 				<label class="list-group-item">
 				  <input class="form-check-input me-1" type="checkbox" value="">
