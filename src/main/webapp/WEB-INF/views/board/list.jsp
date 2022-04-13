@@ -46,9 +46,10 @@
 		</c:forEach>
 	</table>
 	
-
+	<c:if test="${not empty member}">
 	<a href="./add"><button type="button" class="btn btn-outline-secondary">글쓰기</button></a>
-
+	</c:if>
+	
 	<c:if test="${pager.pre}">
 		<a href="./list?page=${pager.startNum-1}">PREVIEW</a>
 	</c:if>

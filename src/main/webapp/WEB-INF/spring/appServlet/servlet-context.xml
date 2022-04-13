@@ -35,6 +35,15 @@
 		</interceptor>
 		
 		
+		
+		<interceptor>
+			<mapping path="/qna/*"/>
+			<exclude-mapping path="/qna/list"/>
+			<exclude-mapping path="/qna/detail"/>
+		<beans:bean class="com.pj.market.interceptor.WrterChechInterceptor"></beans:bean>
+		</interceptor>
+		
+		
 	</interceptors>
 	
 	<context:component-scan base-package="com.pj.market" />

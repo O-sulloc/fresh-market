@@ -14,7 +14,7 @@
   <form action="./add" method="post">
   제목 : <input type="text" id=title name="title">
   내용 : <textarea rows="" cols="50" name="contents"></textarea>
-  글쓴이 : <input type="text" id="id" name="id">
+  글쓴이 : <input type="text" id="id" name="id" value="${dto.id}">
   
   <button type="submit">등록</button>
   <a href="./list"><button type="submit">목록</button></a>

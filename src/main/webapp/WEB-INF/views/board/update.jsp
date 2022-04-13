@@ -13,8 +13,9 @@
   
   <form action="./update" method="post">
   <input type="hidden" readonly name="num" value="${dto.num}">
-  제목 : <input type="text" id=title name="title">
-  내용 : <textarea rows="" cols="50" name="contents"></textarea>
+  제목 : <input type="text" id=title name="title" value="${dto.title}">
+  내용 : <textarea rows="" cols="50" name="contents">${dto.contents}</textarea>
+  Writer : <input type="text" name="id" value="${dto.id}" disabled>
   
   <button type="submit">수정완료</button>
   <a href="./list"><button type="submit">목록</button></a>
