@@ -23,7 +23,7 @@
 	    
 	    <div class="carousel-inner">
 	      <div class="carousel-item active">
-	      	<a href="/market/product/detail?no=216">
+	      	<a href="/market/product/detail?no=294">
 	      		<img alt="" src="./resources/img/img3.PNG" class="bd-placeholder-img" width="100%" height="50%">
 	      	</a>
 	      </div>
