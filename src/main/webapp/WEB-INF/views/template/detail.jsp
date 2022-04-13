@@ -38,7 +38,7 @@
 
 			<div class="medium-6 large-5 cell large-offset-1">
 				<h3>상품명: ${dto.proName}</h3>
-				<p>상품 소개: ${dto.contents}</p>
+				<p>${dto.contents}</p>
 				<input readonly value="${dto.price}" name="price">원
 				
 				<select name="count" size="">
@@ -56,7 +56,9 @@
 		<hr>
 		<div>
 			<c:forEach items="${dto.fileDTOs}" var="f">
-				<img alt="" src="../resources/upload/product/${f.fileName}">
+				<div class="pic">
+					<img alt="" src="../resources/upload/product/${f.fileName}">
+				</div>
 			</c:forEach>
 		</div>
 

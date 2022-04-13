@@ -73,6 +73,7 @@ public class ProductController {
 	public ModelAndView list(ModelAndView mv, ProductPager productPager,ProductDTO productDTO) throws Exception {
 
 		List<ProductDTO> ar = productService.list(productPager);
+		System.out.println(ar.size());
 		mv.addObject("list", ar);
 		mv.addObject("pager", productPager);
 		mv.addObject("dto", productDTO);
