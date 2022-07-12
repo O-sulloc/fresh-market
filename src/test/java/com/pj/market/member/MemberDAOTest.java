@@ -12,7 +12,7 @@ public class MemberDAOTest extends MyJunitTest {
 	@Autowired
 	private MemberDAO memberDAO;
 
-	@Test
+	//@Test
 	public void mypageTest() throws Exception {
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO.setId("10");
@@ -31,7 +31,7 @@ public class MemberDAOTest extends MyJunitTest {
 		assertNotNull(memberDTO);
 	}
 
-	// @Test
+	@Test
 	public void joinTest() throws Exception {
 		MemberDTO memberDTO = new MemberDTO();
 		memberDTO.setId("idtest");

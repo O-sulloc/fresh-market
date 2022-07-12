@@ -21,8 +21,8 @@
 	</select>
 
 	<insert id="join" parameterType="MemberDTO">
-		insert into member1 (id, pw, name, email, address)
-		values (#{id}, #{pw}, #{name}, #{email}, #{address})
+		INSERT INTO MEMBER1 (ID, PW, NAME, EMAIL, ADDRESS)
+		VALUES (#{id}, #{pw}, #{name}, #{email}, #{address})
 	</insert>
 	
 	<delete id="delete" parameterType="MemberDTO">
