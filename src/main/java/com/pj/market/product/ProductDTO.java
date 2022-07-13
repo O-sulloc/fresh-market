@@ -4,54 +4,54 @@ import java.util.List;
 
 public class ProductDTO {
 
-	private Long no;
-	private String proName;
-	private Long price;
-	private String contents;
+	private Long productNum;
+	private String productName;
+	private Long productPrice;
+	private String productDetail;
+	private Long productCount;
 	private Long category;
-
-	private List<ProductFileDTO> fileDTOs;
+	private Long sales;
 	
+	private List<ProductFileDTO> fileDTOs;
 
-
-	public List<ProductFileDTO> getFileDTOs() {
-		return fileDTOs;
+	public Long getProductNum() {
+		return productNum;
 	}
 
-	public void setFileDTOs(List<ProductFileDTO> fileDTOs) {
-		this.fileDTOs = fileDTOs;
+	public void setProductNum(Long productNum) {
+		this.productNum = productNum;
 	}
 
-	public Long getNo() {
-		return no;
+	public String getProductName() {
+		return productName;
 	}
 
-	public void setNo(Long no) {
-		this.no = no;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
-	public String getProName() {
-		return proName;
+	public Long getProductPrice() {
+		return productPrice;
 	}
 
-	public void setProName(String proName) {
-		this.proName = proName;
+	public void setProductPrice(Long productPrice) {
+		this.productPrice = productPrice;
 	}
 
-	public Long getPrice() {
-		return price;
+	public String getProductDetail() {
+		return productDetail;
 	}
 
-	public void setPrice(Long price) {
-		this.price = price;
+	public void setProductDetail(String productDetail) {
+		this.productDetail = productDetail;
 	}
 
-	public String getContents() {
-		return contents;
+	public Long getProductCount() {
+		return productCount;
 	}
 
-	public void setContents(String contents) {
-		this.contents = contents;
+	public void setProductCount(Long productCount) {
+		this.productCount = productCount;
 	}
 
 	public Long getCategory() {
@@ -61,5 +61,22 @@ public class ProductDTO {
 	public void setCategory(Long category) {
 		this.category = category;
 	}
+
+	public Long getSales() {
+		return sales;
+	}
+
+	public void setSales(Long sales) {
+		this.sales = sales;
+	}
+
+	public List<ProductFileDTO> getFileDTOs() {
+		return fileDTOs;
+	}
+
+	public void setFileDTOs(List<ProductFileDTO> fileDTOs) {
+		this.fileDTOs = fileDTOs;
+	}
+	
 
 }

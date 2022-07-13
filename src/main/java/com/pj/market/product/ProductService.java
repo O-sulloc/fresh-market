@@ -33,7 +33,7 @@ public class ProductService {
 			ProductFileDTO productFileDTO = new ProductFileDTO();
 			productFileDTO.setFileName(fileName);
 			productFileDTO.setOriName(files[i].getOriginalFilename());
-			productFileDTO.setNo(productDTO.getNo());
+			productFileDTO.setProductNum(productDTO.getProductNum());
 
 			result = productDAO.addFile(productFileDTO);
 		}
@@ -62,7 +62,7 @@ public class ProductService {
 			ProductFileDTO productFileDTO = new ProductFileDTO();
 			productFileDTO.setFileName(fileName);
 			productFileDTO.setOriName(files[i].getOriginalFilename());
-			productFileDTO.setNo(productDTO.getNo());
+			productFileDTO.setProductNum(productDTO.getProductNum());
 
 			result = productDAO.addFile(productFileDTO);
 		}

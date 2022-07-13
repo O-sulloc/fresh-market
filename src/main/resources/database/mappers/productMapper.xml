@@ -12,50 +12,52 @@
     	
     	<select id="listFile" parameterType="ProductDTO" resultType="ProductFileDTO">
     		SELECT * FROM PRODUCTFILE
-    		WHERE NO = #{no}
+    		WHERE PRODUCTNUM = #{productNum}
     	</select>
-    
+    	
+    	<!-- 상품 업데이트 -->
     	<update id="update" parameterType="ProductDTO">
-    		UPDATE PRODUCT 
-    		SET proname=#{proName}, price=#{price}, contents=#{contents}, category=#{category}
-    		where no=#{no}
+    		UPDATE PRODUCT1 
+    		SET PRODUCTNAME=#{productName}, PRODUCTPRICE=#{productPrice}, PRODUCTDETAIL=#{productDetail}, PRODUCTCOUNT=#{productCount}, SALES=#{sales}, CATEGORY=#{category}
+    		WHERE PRODUCTNUM=#{productNum}
     	</update>
     	
+    	<!-- 상품 사진 추가 -->
     	<insert id="addFile" parameterType="ProductFileDTO">
-    		INSERT INTO PRODUCTFILE (FILENUM, NO, FILENAME, ORINAME) 
+    		INSERT INTO PRODUCTFILE (PRODUCTNUM, FILENAME, ORINAME) 
     		VALUES
-    		(PRODUCTFILE_SEQ.nextval, #{no}, #{fileName}, #{oriName})
+    		(#{productNum}, #{fileName}, #{oriName})
     	</insert>
     	
+    	<!-- 상품 추가 -->
         <insert id="add" parameterType="ProductDTO">
-            <selectKey keyProperty="no" order="BEFORE" resultType="Long">
-    			select product_seq.nextval from dual
+            <selectKey keyProperty="productNum" order="BEFORE" resultType="Long">
+    			SELECT LAST_INSERT_ID()
     		</selectKey>
-    		INSERT INTO product (NO, PRONAME, PRICE, CONTENTS, CATEGORY)
+    		INSERT INTO PRODUCT1 (PRODUCTNUM, PRODUCTNAME, PRODUCTPRICE, PRODUCTDETAIL, CATEGORY, PRODUCTCOUNT, SALES)
     		VALUES 
-    		(#{no}, #{proName}, #{price}, #{contents}, #{category})
+    		(#{productNum}, #{productName}, #{productPrice}, #{productDetail}, #{category}, #{productCount}, #{sales})
     	</insert>
 
     	<delete id="delete" parameterType="ProductDTO">
-    		DELETE product WHERE
-			no = #{no}
+    		DELETE PRODUCT1 WHERE PRODUCTNUM = #{productNum}
     	</delete>
     	
     	<select id="detail" parameterType="ProductDTO" resultMap="detailResult">
-    		select p.*, pf.*
-			from 
-				product p
-    				left outer join
-    			productfile pf
-    			on p.no = pf.no
-			where p.no=#{no}
+    		SELECT P.*, PF.*
+			FROM 
+				PRODUCT1 P
+    				LEFT OUTER JOIN
+    			PRODUCTFILE PF
+    			ON P.PRODUCTNUM = PF.PRODUCTNUM
+    		WHERE P.PRODUCTNUM = #{productNum}
     	</select>
     	
     	<resultMap type="ProductDTO" id="detailResult">
-    		<id column="no" property="no"/>
-    		<result column="proname" property="proName"/>
-    		<result column="price" property="price"/>
-    		<result column="contents" property="contents"/>
+    		<id column="productNum" property="productNum"/>
+    		<result column="productName" property="productName"/>
+    		<result column="productPrice" property="productPrice"/>
+    		<result column="productDetail" property="productDetail"/>
     		<result column="category" property="category"/>
     		<collection property="fileDTOs" javaType="List" ofType="ProductFileDTO">
     			<id column="fileNum" property="fileNum"/>

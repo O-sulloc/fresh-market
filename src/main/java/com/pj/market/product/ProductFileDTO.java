@@ -3,7 +3,7 @@ package com.pj.market.product;
 public class ProductFileDTO {
 
 	private Long fileNum;
-	private Long no;
+	private Long productNum;
 	private String fileName;
 	private String oriName;
 
@@ -15,12 +15,12 @@ public class ProductFileDTO {
 		this.fileNum = fileNum;
 	}
 
-	public Long getNo() {
-		return no;
+	public Long getProductNum() {
+		return productNum;
 	}
 
-	public void setNo(Long no) {
-		this.no = no;
+	public void setProductNum(Long productNum) {
+		this.productNum = productNum;
 	}
 
 	public String getFileName() {
