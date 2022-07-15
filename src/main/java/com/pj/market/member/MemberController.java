@@ -39,7 +39,7 @@ public class MemberController {
 		String path = "redirect: ./"; // login failed
 
 		if (memberDTO != null) {
-			path = "redirect: ./update"; // login success
+			path = "redirect: ./mypage"; // login success
 		}
 
 		return path;

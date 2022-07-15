@@ -6,13 +6,13 @@
     
 <mapper namespace="com.pj.market.member.MemberDAO">
 	<update id="update" parameterType="MemberDTO">
-		update member1 set name=#{name}, email=#{email}, address=#{address}
-		where id=#{id}
+		UPDATE MEMBER1 SET NAME=#{name}, EMAIL=#{email}, ADDRESS=#{address}
+		WHERE ID=#{id}
 	</update>
 
 	<select id="mypage" parameterType="MemberDTO" resultType="MemberDTO">
-		select id, name, email, address from member1
-		where id=#{id}
+		SELECT ID, NAME, EMAIL, ADDRESS FROM MEMBER1
+		WHERE ID=#{id}
 	</select>
 	
 	<select id="login" parameterType="MemberDTO" resultType="MemberDTO">
@@ -26,8 +26,8 @@
 	</insert>
 	
 	<delete id="delete" parameterType="MemberDTO">
-		delete from member1
-		where id=#{id}
+		DELETE FROM MEMBER1
+		WHERE ID=#{id}
 	</delete>
     
 </mapper>
