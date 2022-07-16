@@ -13,21 +13,26 @@
 	<h1>add page</h1>
 	
 	<form action="./add" method = "post" enctype="multipart/form-data">
-		<input hidden="" type="number" name="no">
+		<input type="number" name="productNum">
 		
 		<div class="col-md-offset-3 col-md-6">
 		  <label class="form-label">상품명</label>
-		  <input type="text" name="proName">
+		  <input type="text" name="productName">
 		</div>
 
 		<div class="col-md-offset-3 col-md-6">
 		  <label class="form-label">가격</label>
-		  <input type="number" name="price">
+		  <input type="number" name="productPrice">
+		</div>
+		
+		<div class="col-md-offset-3 col-md-6">
+		  <label class="form-label">재고</label>
+		  <input type="number" name="productCount">
 		</div>
 
 		<div class="col-md-offset-3 col-md-6">
 		  <label class="form-label">상품 설명</label>
-		  <textarea name="contents" rows="" cols="" class="form-control"></textarea>
+		  <textarea name="productDetail" class="form-control"></textarea>
 		</div>
 
 		<div class="col-md-offset-3 col-md-6">

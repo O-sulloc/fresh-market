@@ -24,9 +24,12 @@
     	
     	<!-- 상품 사진 추가 -->
     	<insert id="addFile" parameterType="ProductFileDTO">
-    		INSERT INTO PRODUCTFILE (PRODUCTNUM, FILENAME, ORINAME) 
+    		<selectKey keyProperty="fileNum" order="BEFORE" resultType="Long">
+    			SELECT LAST_INSERT_ID()
+    		</selectKey>
+    		INSERT INTO PRODUCTFILE (PRODUCTNUM, FILENAME, ORINAME, FILENUM) 
     		VALUES
-    		(#{productNum}, #{fileName}, #{oriName})
+    		(#{productNum}, #{fileName}, #{oriName}, #{fileNum})
     	</insert>
     	
     	<!-- 상품 추가 -->
@@ -36,7 +39,7 @@
     		</selectKey>
     		INSERT INTO PRODUCT1 (PRODUCTNUM, PRODUCTNAME, PRODUCTPRICE, PRODUCTDETAIL, CATEGORY, PRODUCTCOUNT, SALES)
     		VALUES 
-    		(#{productNum}, #{productName}, #{productPrice}, #{productDetail}, #{category}, #{productCount}, #{sales})
+    		(#{productNum}, #{productName}, #{productPrice}, #{productDetail}, #{category}, #{productCount}, 0)
     	</insert>
 
     	<delete id="delete" parameterType="ProductDTO">
@@ -67,39 +70,26 @@
     	</resultMap>
         
         <select id="total" resultType="Long" parameterType="ProductPager">
-        	select count(no) from product
-        	where no>0 
-    		and proname like '%' || #{search} || '%' 
+        	SELECT COUNT(PRODUCTNUM) FROM PRODUCT1
+        	WHERE PRODUCTNUM>0
+        	AND PRODUCTNAME LIKE '%' || #{search} || '%'
         </select>
 			
     	<select id="list" parameterType="ProductPager" resultMap="detailResult">
-    		SELECT * FROM 
-    			(select rownum R, P.* From
-    				(select * from 
-    					(select *
-    					from product p1
-    						left outer join
-    					productfile pf
-    					using (no)
-    					)
-	    				where no>0
-	    				and
-	    				proname like '%' || #{search} || '%' 
-	    				ORDER BY NO DESC
-    				) P
-    			)
-    		where R between #{startRow} and #{lastRow} 
-	    			<choose>
-	    				<when test="category==1">
-	    					and category =1
-	    				</when>
-	    				<when test="category==2">
-	    					and category =2
-	    				</when>
-	    				<when test="category==3">
-	    					and category =3
-	    				</when>
-	    			</choose>
-		     		
+    		SELECT * FROM PRODUCT1
+	    		LEFT JOIN
+	    		PRODUCTFILE PF
+				USING (PRODUCTNUM)
+			<choose>
+	    		<when test="category==1">
+	    			WHERE CATEGORY =1
+	    		</when>
+	    		<when test="category==2">
+	    			WHERE CATEGORY =2
+	    		</when>
+	    		<when test="category==3">
+	    			WHERE CATEGORY =3
+	    		</when>
+	    	</choose>
     	</select>
     </mapper>

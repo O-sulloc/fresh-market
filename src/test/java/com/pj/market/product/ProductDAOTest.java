@@ -19,8 +19,10 @@ public class ProductDAOTest extends MyJunitTest {
 		productDTO.setProductPrice(3000L);
 		productDTO.setProductDetail("밀크티야");
 		productDTO.setCategory(2L);
+		productDTO.setProductCount(3L);
+		productDTO.setSales(0L);
 		
 		int result = productDAO.add(productDTO);
-		
+		assertEquals(result, 1);
 	}
 }
