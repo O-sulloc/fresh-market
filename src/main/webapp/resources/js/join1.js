@@ -23,6 +23,12 @@ let nameCheck = false;
 let emailCheck = false;
 let addressCheck = false;
 
+
+id.addEventListener("click", function(){
+    console.log("nono");
+});
+
+
 btn.addEventListener("click", function(){
     
     let c = true;
