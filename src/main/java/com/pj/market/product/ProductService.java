@@ -60,7 +60,7 @@ public class ProductService {
 			String fileName = fileManager.save(files[i], "resources/upload/product/");
 
 			ProductFileDTO productFileDTO = new ProductFileDTO();
-			productFileDTO.setProductNum(productDTO.getProductNum()+1);
+			
 			productFileDTO.setFileName(fileName);
 			productFileDTO.setOriName(files[i].getOriginalFilename());
 

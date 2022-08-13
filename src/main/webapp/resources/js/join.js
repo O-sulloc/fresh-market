@@ -37,13 +37,13 @@ userName.addEventListener("blur", function(){
 });
 
 //id span 보이기
-function idInfo(){
+id.addEventListener("focusin", function(){
     if(idGuide.style.display=='none'){
         //아이디 조건 설명해주는 span 태그가 접혀있으면
 		idGuide.style.display = 'block'
         //펼쳐줘
 	}
-}
+});
 
 //id 검사
 id.addEventListener("keyup", function(){
@@ -61,18 +61,16 @@ id.addEventListener("keyup", function(){
     }
 });
 
-//pw span 보이기
-function pwInfo(){
-    if(pwGuide.style.display=='none'){
-        //pw 조건 설명해주는 span 태그가 접혀있으면
-		pwGuide.style.display = 'block'
-        //펼쳐줘
-	}
-}
 
 //pw 검사
 pw.addEventListener("keyup", function(){
     let pwLength=pw.value.length;
+
+    if(pwGuide.style.display=='none'){
+        //pw 조건 설명해주는 span 태그가 접혀있으면
+		pwGuide.style.display = 'block'
+        //펼쳐줘
+	};
     
     if(pwLength>=8 && pwLength<=16){
         //pw 8~16자리이면 초록색으로 표시해줘
@@ -86,20 +84,17 @@ pw.addEventListener("keyup", function(){
     }
 });
 
-//pw2 span 보이기
-function pw2Info(){
-    if(pw2Guide.style.display=='none'){
-        //pw 조건 설명해주는 span 태그가 접혀있으면
-		pw2Guide.style.display = 'block'
-        //펼쳐줘
-	}
-}
-
 //pw2 일치 확인
 pw2.addEventListener("keyup", function(){
     let pw1 = pw.value;
     let pwConfirm = pw2.value;
     
+    if(pw2Guide.style.display=='none'){
+        //pw 조건 설명해주는 span 태그가 접혀있으면
+		pw2Guide.style.display = 'block'
+        //펼쳐줘
+	};
+
     if(pw1 == pwConfirm){
         //비밀번호가 일치한다면
         pw2Case1.style.color ='#0f851a';

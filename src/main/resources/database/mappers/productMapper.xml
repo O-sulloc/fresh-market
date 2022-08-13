@@ -24,8 +24,8 @@
     	
     	<!-- 상품 사진 추가 -->
     	<insert id="addFile" parameterType="ProductFileDTO">
-    		<selectKey keyProperty="fileNum" order="BEFORE" resultType="Long">
-    			SELECT LAST_INSERT_ID()
+    		<selectKey keyProperty="productNum" order="BEFORE" resultType="Long">
+    			SELECT MAX(PRODUCTNUM) FROM PRODUCT1
     		</selectKey>
     		INSERT INTO PRODUCTFILE (PRODUCTNUM, FILENAME, ORINAME, FILENUM) 
     		VALUES
@@ -91,5 +91,6 @@
 	    			WHERE CATEGORY =3
 	    		</when>
 	    	</choose>
+	    	ORDER BY PRODUCTNUM DESC
     	</select>
     </mapper>
