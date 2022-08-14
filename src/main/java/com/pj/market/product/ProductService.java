@@ -78,12 +78,19 @@ public class ProductService {
 		productPager.makeRow();
 //		System.out.println(productPager.getStartRow());
 //		System.out.println(productPager.getLastRow());
-		//System.out.println(productPager.getSearch());
-		//System.out.println(productPager.getKeyword());
-		//System.out.println(productPager.getCategory());
+//		System.out.println(productPager.getSearch());
+//		System.out.println(productPager.getKeyword());
+//		System.out.println(productPager.getCategory());
 		Long totalCount = productDAO.total(productPager);
 		productPager.makeNum(totalCount);
 		List<ProductDTO> ar = productDAO.list(productPager);
+		System.out.println(ar.size());
+		return ar;
+	}
+	
+	public List<ProductDTO> lowPrice() throws Exception {
+		List<ProductDTO> ar =productDAO.lowPrice();
+		
 		return ar;
 	}
 }

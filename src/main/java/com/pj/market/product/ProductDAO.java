@@ -51,4 +51,8 @@ public class ProductDAO {
 	public Long total(ProductPager productPager) throws Exception{
 		return sqlSession.selectOne(NAMESPACE+"total", productPager);
 	}
+	
+	public List<ProductDTO> lowPrice() throws Exception{
+		return sqlSession.selectList(NAMESPACE + "lowPrice");
+	}
 }

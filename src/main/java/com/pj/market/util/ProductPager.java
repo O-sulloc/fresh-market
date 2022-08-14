@@ -44,7 +44,7 @@ public class ProductPager {
 		}
 
 		// 3. 블럭당 개수
-		Long perBlock = 15L;
+		Long perBlock = 12L;
 
 		// 4. 전체 블럭의 개수 구하기
 		Long totalBlock = totalPage / perBlock;
@@ -91,7 +91,7 @@ public class ProductPager {
 		// perPage가 설정이 안돼서 null이면
 		// 초기값으로 10을 넣어줘
 		if (this.perPage == null || this.perPage < 1) {
-			this.perPage = 15L;
+			this.perPage = 12L;
 			// 그니까 글번호 5개, 15개 이런거 지정안하면
 			// 10개를 default로 보여달라고
 		}

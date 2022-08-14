@@ -80,4 +80,5 @@ public class ProductController {
 		mv.setViewName("product/list");
 		return mv;
 	}
+
 }

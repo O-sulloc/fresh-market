@@ -74,26 +74,24 @@
             <div class="row">
                 <div class="col-12">
                     <div class="section-title">
-                        <h2>후기 top 8</h2>
-                        <p>후기가 많은 상품들이에요</p>
+                        <h2>최저가 상품</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-3 col-md-6 col-12">
-                	<!-- 상품 반복 출력 -->
-                	<c:forEach items="${list }" var="product" begin="0" end="7">
+             	<!-- 상품 반복 출력 -->
+               	<c:forEach items="${list }" var="product" begin="0" end="7">
+	                <div class="col-lg-3 col-md-6 col-12">
                 		<div class="single-product">
                 			<div class="product-image">
-	                            <img src="resources/assets/images/products/product-1.jpg" alt="#">
+	                            <img src="../resources/upload/product/${product.fileDTOs[0].fileName}" alt="#">
 	                            <div class="button">
 	                                <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
 	                            </div>
 	                        </div>
 	                        <div class="product-info">
-	                            <span class="category">Watches</span>
 	                            <h4 class="title">
-	                                <a href="product-grids.html">Xiaomi Mi Band 5</a>
+	                                <a href="./detail?productNum=${product.productNum}">${product.productName}</a>
 	                            </h4>
 	                            <ul class="review">
 	                                <li><i class="lni lni-star-filled"></i></li>
@@ -104,40 +102,12 @@
 	                                <li><span>4.0 Review(s)</span></li>
 	                            </ul>
 	                            <div class="price">
-	                                <span>$199.00</span>
+	                                <span>${product.productPrice}원</span>
 	                            </div>
 	                        </div>
                 		</div>
-                	</c:forEach>
-                	
-                    <!-- Start Single Product -->
-                    <div class="single-product">
-                        <div class="product-image">
-                            <img src="resources/assets/images/products/product-1.jpg" alt="#">
-                            <div class="button">
-                                <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
-                            </div>
-                        </div>
-                        <div class="product-info">
-                            <span class="category">Watches</span>
-                            <h4 class="title">
-                                <a href="product-grids.html">Xiaomi Mi Band 5</a>
-                            </h4>
-                            <ul class="review">
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star-filled"></i></li>
-                                <li><i class="lni lni-star"></i></li>
-                                <li><span>4.0 Review(s)</span></li>
-                            </ul>
-                            <div class="price">
-                                <span>$199.00</span>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Single Product -->
-                </div>
+	                </div>
+               	</c:forEach>
             </div>
         </div>
     </section>
