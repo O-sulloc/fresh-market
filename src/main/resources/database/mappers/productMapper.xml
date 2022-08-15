@@ -104,4 +104,13 @@
 					USING (PRODUCTNUM)
 			ORDER BY PRODUCTPRICE ASC		
     	</select>
+    	
+    	<!-- index MaxSales 판매량 -->
+    	<select id="maxSales" resultMap="detailResult">
+    		SELECT * FROM PRODUCT1
+				LEFT JOIN
+					PRODUCTFILE PF
+					USING (PRODUCTNUM)
+			ORDER BY SALES DESC		
+    	</select>
     </mapper>

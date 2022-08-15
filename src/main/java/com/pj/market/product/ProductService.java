@@ -93,4 +93,10 @@ public class ProductService {
 		
 		return ar;
 	}
+	
+	public List<ProductDTO> maxSales() throws Exception {
+		List<ProductDTO> ar =productDAO.maxSales();
+		
+		return ar;
+	}
 }

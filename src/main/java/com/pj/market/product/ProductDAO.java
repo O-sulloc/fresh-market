@@ -55,4 +55,8 @@ public class ProductDAO {
 	public List<ProductDTO> lowPrice() throws Exception{
 		return sqlSession.selectList(NAMESPACE + "lowPrice");
 	}
+	
+	public List<ProductDTO> maxSales() throws Exception{
+		return sqlSession.selectList(NAMESPACE + "maxSales");
+	}
 }

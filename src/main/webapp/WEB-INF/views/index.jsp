@@ -68,6 +68,7 @@
     </section>
     <!-- End Hero Area -->
 
+	<!-- 최저가 -->
     <!-- Start Trending Product Area -->
     <section class="trending-product section" style="margin-top: 12px; background-color: white;">
         <div class="container">
@@ -84,7 +85,7 @@
 	                <div class="col-lg-3 col-md-6 col-12">
                 		<div class="single-product">
                 			<div class="product-image">
-	                            <img src="../resources/upload/product/${product.fileDTOs[0].fileName}" alt="#">
+	                            <img src="./resources/upload/product/${product.fileDTOs[0].fileName}" alt="#">
 	                            <div class="button">
 	                                <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
 	                            </div>
@@ -119,87 +120,51 @@
 	</div>
     <!-- End Call Action Area -->
 
-    <!-- Start Banner Area -->
-    <section class="banner section">
+	<!-- 판매량 top8  -->
+    <!-- Start Trending Product Area -->
+    <section class="trending-product section" style="margin-top: 12px; background-color: white;">
         <div class="container">
             <div class="row">
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="single-banner" style="background-image:url('resources/assets/images/banner/banner-1-bg.jpg')">
-                        <div class="content">
-                            <h2>Smart Watch 2.0</h2>
-                            <p>Space Gray Aluminum Case with <br>Black/Volt Real Sport Band </p>
-                            <div class="button">
-                                <a href="product-grids.html" class="btn">View Details</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-12">
-                    <div class="single-banner custom-responsive-margin"
-                        style="background-image:url('resources/assets/images/banner/banner-2-bg.jpg')">
-                        <div class="content">
-                            <h2>Smart Headphone</h2>
-                            <p>Lorem ipsum dolor sit amet, <br>eiusmod tempor
-                                incididunt ut labore.</p>
-                            <div class="button">
-                                <a href="product-grids.html" class="btn">Shop Now</a>
-                            </div>
-                        </div>
+                <div class="col-12">
+                    <div class="section-title">
+                        <h2>판매량 TOP 8</h2>
                     </div>
                 </div>
             </div>
+            <div class="row">
+             	<!-- 상품 반복 출력 -->
+               	<c:forEach items="${maxSalesList}" var="product" begin="0" end="7">
+	                <div class="col-lg-3 col-md-6 col-12">
+                		<div class="single-product">
+                			<div class="product-image">
+	                            <img src="./resources/upload/product/${product.fileDTOs[0].fileName}" alt="#">
+	                            <div class="button">
+	                                <a href="product-details.html" class="btn"><i class="lni lni-cart"></i> Add to Cart</a>
+	                            </div>
+	                        </div>
+	                        <div class="product-info">
+	                            <h4 class="title">
+	                                <a href="./detail?productNum=${product.productNum}">${product.productName}</a>
+	                            </h4>
+	                            <ul class="review">
+	                                <li><i class="lni lni-star-filled"></i></li>
+	                                <li><i class="lni lni-star-filled"></i></li>
+	                                <li><i class="lni lni-star-filled"></i></li>
+	                                <li><i class="lni lni-star-filled"></i></li>
+	                                <li><i class="lni lni-star"></i></li>
+	                                <li><span>4.0 Review(s)</span></li>
+	                            </ul>
+	                            <div class="price">
+	                                <span>${product.productPrice}원</span>
+	                            </div>
+	                        </div>
+                		</div>
+	                </div>
+               	</c:forEach>
+            </div>
         </div>
     </section>
-    <!-- End Banner Area -->
-
-    <!-- Start Shipping Info -->
-    <section class="shipping-info">
-        <div class="container">
-            <ul>
-                <!-- Free Shipping -->
-                <li>
-                    <div class="media-icon">
-                        <i class="lni lni-delivery"></i>
-                    </div>
-                    <div class="media-body">
-                        <h5>Free Shipping</h5>
-                        <span>On order over $99</span>
-                    </div>
-                </li>
-                <!-- Money Return -->
-                <li>
-                    <div class="media-icon">
-                        <i class="lni lni-support"></i>
-                    </div>
-                    <div class="media-body">
-                        <h5>24/7 Support.</h5>
-                        <span>Live Chat Or Call.</span>
-                    </div>
-                </li>
-                <!-- Support 24/7 -->
-                <li>
-                    <div class="media-icon">
-                        <i class="lni lni-credit-cards"></i>
-                    </div>
-                    <div class="media-body">
-                        <h5>Online Payment.</h5>
-                        <span>Secure Payment Services.</span>
-                    </div>
-                </li>
-                <!-- Safe Payment -->
-                <li>
-                    <div class="media-icon">
-                        <i class="lni lni-reload"></i>
-                    </div>
-                    <div class="media-body">
-                        <h5>Easy Return.</h5>
-                        <span>Hassle Free Shopping.</span>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </section>
-    <!-- End Shipping Info -->
+    <!-- End Trending Product Area -->
 
 	<!-- start footer -->
 	<c:import url="./tmp/footer.jsp"></c:import>

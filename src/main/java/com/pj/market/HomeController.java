@@ -40,11 +40,16 @@ public class HomeController {
 		
 		String formattedDate = dateFormat.format(date);
 		
+		//lowprice
 		List<ProductDTO> ar= productService.lowPrice();
 		mv.addObject("list", ar);
 		mv.addObject("dto", productDTO);
 		mv.addObject("serverTime", formattedDate);
 		mv.setViewName("index");
+		
+		//maxSales
+		List<ProductDTO> maxSalesList= productService.maxSales();
+		mv.addObject("maxSalesList",maxSalesList);
 		
 		return mv;
 	}
