@@ -6,25 +6,28 @@
     
 <mapper namespace="com.pj.market.cart.CartDAO">
 	<update id="update" parameterType="CartDTO">
-		Update cart
-		SET count=#{count}
-		where no = #{no} and id=#{id}
+		Update CART
+		SET COUNT=#{count}
+		where PRODUCTNUM = #{no} and ID=#{id}
 	</update>
 	
 	<delete id="delete" parameterType="CartDTO">
-		Delete cart
+		Delete CART
 		SET CARTNUM=#{cartNum}, no=#{no}, id=#{id}, count=#{count}
 		where no = #{no} and id=#{id}
 	</delete>
 
 	<insert id="add" parameterType="CartDTO">
-		INSERT INTO CART (cartnum, no, id, count)
-		VALUES(cart_seq.nextval, #{no}, #{id}, #{count})
+		<selectKey keyProperty="cartNum" order="BEFORE" resultType="Long">
+    		SELECT LAST_INSERT_ID()
+    	</selectKey>
+		INSERT INTO CART (CARTNUM, PRODUCTNUM, ID, COUNT)
+		VALUES(#{cartNum}, #{productNum}, #{id}, #{count})
 	</insert>
 	
 	<select id="list" resultType="CartDTO" parameterType="CartDTO">
-		select m.address, m.id, p.proname, p.no, p.price, c.cartnum, c.count, p.price*c.count totalprice
-			from member1 m, product p, cart c
-			where m.id = c.id and p.no = c.no
+		SELECT m.ADDRESS , m.ID , p.PRODUCTNAME , p.PRODUCTNUM , p.PRODUCTPRICE, c.CARTNUM, c.COUNT, p.PRODUCTPRICE *c.COUNT totalPrice
+			FROM MEMBER1 m , PRODUCT1 p , CART c
+			WHERE m.ID = c.ID and p.PRODUCTNUM =c.PRODUCTNUM 
 	</select>
 </mapper>

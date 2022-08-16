@@ -28,14 +28,14 @@
 				<td>삭제</td>
 			</tr>
 			<tr>
-				<td>${i.proName }</td>
+				<td>${i.productName}</td>
 				<td><input type="number" name="count" id="count" value="${i.count}"></td>
 				<td><button type="submit" id="updateBtn">수정</button></td>
 				<td>${i.totalPrice }</td>
-				<td><a href="./delete?no=${i.no}">X</a></td>
+				<td><a href="./delete?no=${i.productNum}">X</a></td>
 			</tr>
 		</table>
-		<input type="number" id="no" name="no" value="${i.no}" hidden >
+		<input type="number" id="productNum" name="productNum" value="${i.productNum}" hidden>
 	<c:set var="sum" value="${sum + i.totalPrice}"/>
 	</c:forEach>
 	</form>

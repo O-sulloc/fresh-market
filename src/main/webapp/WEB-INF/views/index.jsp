@@ -92,7 +92,7 @@
 	                        </div>
 	                        <div class="product-info">
 	                            <h4 class="title">
-	                                <a href="./detail?productNum=${product.productNum}">${product.productName}</a>
+	                                <a href="./product/detail?productNum=${product.productNum}">${product.productName}</a>
 	                            </h4>
 	                            <ul class="review">
 	                                <li><i class="lni lni-star-filled"></i></li>
@@ -144,7 +144,7 @@
 	                        </div>
 	                        <div class="product-info">
 	                            <h4 class="title">
-	                                <a href="./detail?productNum=${product.productNum}">${product.productName}</a>
+	                                <a href="./product/detail?productNum=${product.productNum}">${product.productName}</a>
 	                            </h4>
 	                            <ul class="review">
 	                                <li><i class="lni lni-star-filled"></i></li>

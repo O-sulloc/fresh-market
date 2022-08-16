@@ -4,10 +4,9 @@ public class CartDTO {
 	//카트 고유번호
 	private Long cartNum;
 	
-	//카트에 담긴 상품의 이름, 번호, 가격
-	private Long no;
-	private String proName;
-	private Long price;
+	private Long productNum; //상품 번호
+	private String productName;
+	private Long productPrice;
 	
 	//회원 아이디, 주소,
 	private String id;
@@ -27,28 +26,28 @@ public class CartDTO {
 		this.cartNum = cartNum;
 	}
 
-	public Long getNo() {
-		return no;
+	public Long getProductNum() {
+		return productNum;
 	}
 
-	public void setNo(Long no) {
-		this.no = no;
+	public void setProductNum(Long productNum) {
+		this.productNum = productNum;
 	}
 
-	public String getProName() {
-		return proName;
+	public String getProductName() {
+		return productName;
 	}
 
-	public void setProName(String proName) {
-		this.proName = proName;
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
-	public Long getPrice() {
-		return price;
+	public Long getProductPrice() {
+		return productPrice;
 	}
 
-	public void setPrice(Long price) {
-		this.price = price;
+	public void setProductPrice(Long productPrice) {
+		this.productPrice = productPrice;
 	}
 
 	public String getId() {
