@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <!DOCTYPE html>
 <html class="no-js">
 <head>
@@ -94,16 +95,8 @@
 	                            <h4 class="title">
 	                                <a href="./product/detail?productNum=${product.productNum}">${product.productName}</a>
 	                            </h4>
-	                            <ul class="review">
-	                                <li><i class="lni lni-star-filled"></i></li>
-	                                <li><i class="lni lni-star-filled"></i></li>
-	                                <li><i class="lni lni-star-filled"></i></li>
-	                                <li><i class="lni lni-star-filled"></i></li>
-	                                <li><i class="lni lni-star"></i></li>
-	                                <li><span>4.0 Review(s)</span></li>
-	                            </ul>
 	                            <div class="price">
-	                                <span>${product.productPrice}원</span>
+	                                <span><fmt:formatNumber>${product.productPrice}</fmt:formatNumber>원</span>
 	                            </div>
 	                        </div>
                 		</div>
@@ -146,16 +139,8 @@
 	                            <h4 class="title">
 	                                <a href="./product/detail?productNum=${product.productNum}">${product.productName}</a>
 	                            </h4>
-	                            <ul class="review">
-	                                <li><i class="lni lni-star-filled"></i></li>
-	                                <li><i class="lni lni-star-filled"></i></li>
-	                                <li><i class="lni lni-star-filled"></i></li>
-	                                <li><i class="lni lni-star-filled"></i></li>
-	                                <li><i class="lni lni-star"></i></li>
-	                                <li><span>4.0 Review(s)</span></li>
-	                            </ul>
 	                            <div class="price">
-	                                <span>${product.productPrice}원</span>
+	                                <span><fmt:formatNumber>${product.productPrice}</fmt:formatNumber>원</span>
 	                            </div>
 	                        </div>
                 		</div>

@@ -6,15 +6,14 @@
     
 <mapper namespace="com.pj.market.cart.CartDAO">
 	<update id="update" parameterType="CartDTO">
-		Update CART
+		UPDATE CART
 		SET COUNT=#{count}
-		where PRODUCTNUM = #{no} and ID=#{id}
+		WHERE PRODUCTNUM = #{productNum} AND ID=#{id}
 	</update>
 	
 	<delete id="delete" parameterType="CartDTO">
-		Delete CART
-		SET CARTNUM=#{cartNum}, no=#{no}, id=#{id}, count=#{count}
-		where no = #{no} and id=#{id}
+		DELETE FROM CART
+		WHERE CARTNUM=#{cartNum}
 	</delete>
 
 	<insert id="add" parameterType="CartDTO">

@@ -27,12 +27,25 @@ public class CartController {
 		return "redirect:./list";
 	}
 
+	@GetMapping("update")
+	public String update(CartDTO cartDTO,Model model) throws Exception {
+		cartService.update(cartDTO);
+		return "redirect:./list";
+	}
+	
 	@GetMapping("delete")
 	public String delete(CartDTO cartDTO) throws Exception {
 		cartService.delete(cartDTO);
+		System.out.println("삭제해");
 		return "redirect:./list";
 	}
 
+	@PostMapping("delete")
+	public String delete(CartDTO cartDTO, Model model) throws Exception {
+		cartService.delete(cartDTO);
+		return "redirect:./list";
+	}
+	
 	@PostMapping("add")
 	public String add(HttpServletRequest request, CartDTO cartDTO) throws Exception {
 		MemberDTO memberDTO = (MemberDTO) request.getSession().getAttribute("member");

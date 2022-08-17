@@ -13,6 +13,7 @@
 	<h1>add page</h1>
 	
 	<form action="./add" method = "post" enctype="multipart/form-data">
+		<label class="form-label">productnum</label>
 		<input type="number" name="productNum">
 		
 		<div class="col-md-offset-3 col-md-6">

@@ -15,24 +15,24 @@
 	<form action="./update" method = "post" enctype="multipart/form-data">
 		<!-- <div class="col-md-offset-3 col-md-6">
 			<label class="form-label">상품번호</label>
-			<input readonly="readonly" type="number" name="no" value="${dto.no}">
+			<input readonly="readonly" type="number" name="productNum" value="${dto.productNum}">
 		</div> -->
 		
-		<input hidden="" type="number" name="no" value="${dto.no}">
+		<input hidden="" type="number" name="productNum" value="${dto.productNum}">
 		
 		<div class="col-md-offset-3 col-md-6">
 		  <label class="form-label">상품명</label>
-		  <input type="text" name="proName" value="${dto.proName}">
+		  <input type="text" name="productName" value="${dto.productName}">
 		</div>
 
 		<div class="col-md-offset-3 col-md-6">
 		  <label class="form-label">가격</label>
-		  <input type="number" name="price" value="${dto.price}">
+		  <input type="number" name="productPrice" value="${dto.productPrice}">
 		</div>
 
 		<div class="col-md-offset-3 col-md-6">
 		  <label class="form-label">상품 설명</label>
-		  <textarea name="contents" rows="" cols="" class="form-control">${dto.contents}</textarea>
+		  <textarea name="productDetail" rows="" cols="" class="form-control">${dto.productDetail}</textarea>
 		</div>
 
 		<div class="col-md-offset-3 col-md-6">

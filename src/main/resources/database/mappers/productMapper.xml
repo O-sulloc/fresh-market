@@ -80,7 +80,6 @@
 	    		LEFT JOIN
 	    		PRODUCTFILE PF
 				USING (PRODUCTNUM)
-				GROUP BY PRODUCTNUM
 			<choose>
 	    		<when test="category==1">
 	    			WHERE CATEGORY =1
@@ -92,7 +91,8 @@
 	    			WHERE CATEGORY =3
 	    		</when>
 	    	</choose>
-	    	ORDER BY PRODUCTNUM DESC
+	    	GROUP BY PRODUCTNUM
+	    	ORDER BY PRODUCTNUM DESC, FILENUM ASC
 	    	LIMIT #{startRow}, #{lastRow}
     	</select>
     	
@@ -102,7 +102,7 @@
 				LEFT JOIN
 					PRODUCTFILE PF
 					USING (PRODUCTNUM)
-			ORDER BY PRODUCTPRICE ASC		
+			ORDER BY PRODUCTPRICE ASC, FILENUM	ASC
     	</select>
     	
     	<!-- index MaxSales 판매량 -->
@@ -111,6 +111,6 @@
 				LEFT JOIN
 					PRODUCTFILE PF
 					USING (PRODUCTNUM)
-			ORDER BY SALES DESC		
+			ORDER BY SALES DESC, FILENUM ASC
     	</select>
     </mapper>
