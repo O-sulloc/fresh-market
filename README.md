@@ -1,7 +1,8 @@
 # Fresh Market
 > 웹개발의 기본 중의 기본, 쇼핑몰 프로젝트입니다.
 
-* 인덱스 사진 넣기
+![index](https://user-images.githubusercontent.com/96342941/229505956-0c2c3041-d66f-469a-b5f7-b07c3568764b.png)
+
 ---
 
 ## 목차
@@ -43,7 +44,7 @@
 
 ##### 주요 프레임워크 / 라이브러리
 - Java 11
-- Spring 4.3.2
+- Spring
 - mybatis
 - jquery
 - jsp
@@ -61,55 +62,78 @@
 
 ### 4. 실행 화면
 
-    <details>
-        <summary>홈 화면</summary>
+<details open>
+<summary>홈 화면</summary>
 
-    **1. 홈 화면**
+![index_g](https://user-images.githubusercontent.com/96342941/229507366-bf463d03-a917-42f6-b3fe-2b029c368369.gif)
 
-    **2. 상품 노출**
-    최저가, 판매량 순위로 상품 노출. 상품을 클릭하면 상세 페이지로 이동한다.
+최저가, 판매량 순위로 상품 노출. 상품을 클릭하면 상세 페이지로 이동한다.
 
-    </details>
-    <br/> 
-
-
-    <details>
-        <summary>회원 관리</summary>
-
-    **1. 회원 가입**
-    유효성 검사, 카카오 주소 API 활용
-
-    **2. 로그인 및 개인정보 수정**
-
-    </details>
-    <br/> 
+</details>
+<br/> 
 
 
-    <details>
-        <summary>상품</summary>
+<details>
+<summary>회원 관리</summary>
 
-    **1. 상품 리스트**
-    카테고리 별로 상품을 조회할 수 있도록 하였습니다.
+**1. 회원 가입**
 
-    **2. 상품 상세 페이지**
-    상품 사진과 설명을 볼 수 있습니다.
+![join](https://user-images.githubusercontent.com/96342941/229508429-143d1c75-2e42-45d4-b6d4-d7cc018d45d5.gif)
+![스크린샷 2022-12-07 오후 7 58 26](https://user-images.githubusercontent.com/96342941/229509312-636ff512-07f8-416e-9a28-e99039e98c69.png)
 
-    </details>
-    <br/> 
+유효성 검사, 카카오 주소 API 활용
 
 
-    <details>
-        <summary>장바구니</summary>
+**2. 로그인**
 
-    **1. 장바구니**
-    상품 수량 조절이 가능합니다. 담긴 상품 금액에 따라 배송비가 적용되도록 하였습니다.    
+![login](https://user-images.githubusercontent.com/96342941/229508979-0d9ce644-1b90-47fd-8016-4cce4835c427.png)
 
-    </details>
-    <br/> 
+
+**3. 마이페이지 정보 수정**
+
+![mypage](https://user-images.githubusercontent.com/96342941/229509679-091c59c9-63f2-45f3-9c04-8bcdd364cd03.gif)
+
+
+</details>
+<br/> 
+
+
+<details>
+<summary>상품</summary>
+
+**1. 상품 리스트**
+
+![list](https://user-images.githubusercontent.com/96342941/229510574-182cb8d6-0821-483d-939f-9bf20ca7d37d.gif)
+![cate](https://user-images.githubusercontent.com/96342941/229510603-be74982d-e34a-4025-ad51-9d7b4c2c70af.gif)
+
+카테고리 별로 상품을 조회할 수 있도록 하였습니다.
+
+**2. 상품 상세 페이지**
+
+![productdetail](https://user-images.githubusercontent.com/96342941/229511155-de52b7f8-9d92-4160-910c-a4960c350caf.gif)
+
+상품 사진과 설명을 볼 수 있습니다.
+
+</details>
+<br/> 
+
+
+<details>
+<summary>장바구니</summary>
+
+**1. 장바구니**
+
+![cart](https://user-images.githubusercontent.com/96342941/229511444-ac2562ca-7d36-4b8b-a0ab-85dbeb0aa78b.gif)
+
+수량 조절이 가능합니다. 담긴 상품 금액에 따라 배송비가 적용되도록 하였습니다.    
+
+</details>
+<br/> 
 
 ## 구조 및 설계
 
 ### 1. DB 설계
+![erd](https://user-images.githubusercontent.com/96342941/229513042-85909d21-0af2-4c5a-b3cd-52df995ed931.png)
 
 ### 2. API 설계
 포스트맨 도큐먼트
